@@ -14,9 +14,9 @@ body{
     align-items: center;
     padding: 15px 20px 15px 20px;
     box-shadow: 0px 8px 16px pink;
-    position: fixed;
+    /* position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; */
 }
 
 .Navigation a{
@@ -42,6 +42,16 @@ body{
 .NavigationRight{
     display: flex;
     flex-wrap: wrap;
+}
+.NavigationRight a{
+  border-radius: 40px;
+  background-color: #FB607F;
+  color: #f1dfe3;
+  padding: 15px;
+}
+.NavigationRight a:hover{
+  background-color: #f1dfe3;
+  color: #FB607F;
 }
 .Navigation .DropDown {
     display: inline-block;
@@ -79,11 +89,11 @@ body{
     color: #f1dfe3;
 
   }
-  .Navigation a:hover{
-    color: black;
+  .NavigationLeft a:hover{
+    color: #f1dfe3;
   }
     .Navigation .dropButton:hover{
-    color: black;
+    color:#f1dfe3;
   }
  .Navigation .DropDown:hover .dropdown-content {
     display: block;
@@ -92,4 +102,5 @@ body{
 .MainContent .MainBackgroundImage{
     background-image: url("MainBackroundPhoto.jpg");
     height: 400px;
+    width: 2000px;
 }
