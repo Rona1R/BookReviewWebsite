@@ -101,6 +101,6 @@ body{
 
 .MainContent .MainBackgroundImage{
     background-image: url("CSS/BackgroundFoto.jpg");
-    filter: brightness(70%);
     height: 400px;
+    width: 2050px;
 }
