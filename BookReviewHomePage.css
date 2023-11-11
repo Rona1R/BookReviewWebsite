@@ -1,23 +1,29 @@
 body{
     margin: 0;
+    background-color:white;
 }
 .NavigationLeft img{
     width:80px;
     height:60px;
 }
 .Navigation{
-    background-color: #FFF8E7;
+    background-color:white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px 15px 20px;
+    box-shadow: 0px 8px 16px pink;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .Navigation a{
     color: #FB607F;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
+
 }
 
 .NavigationLeft{
@@ -48,13 +54,13 @@ body{
     border: none;
     cursor: pointer;
     color: #FB607F;
-    background-color: #FFF8E7;
+    background-color:white;
   }
   
 .Navigation .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #FFF8E7; 
+    background-color: #f1dfe3; 
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
@@ -69,10 +75,21 @@ body{
   }
   
  .Navigation .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color:#FB607F;
+    color: #f1dfe3;
+
   }
-  
+  .Navigation a:hover{
+    color: black;
+  }
+    .Navigation .dropButton:hover{
+    color: black;
+  }
  .Navigation .DropDown:hover .dropdown-content {
     display: block;
   }
-  
+
+.MainContent .MainBackgroundImage{
+    background-image: url("MainBackroundPhoto.jpg");
+    height: 400px;
+}
