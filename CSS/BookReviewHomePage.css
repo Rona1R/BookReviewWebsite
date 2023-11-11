@@ -1,10 +1,11 @@
 body{
     margin: 0;
     background-color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .NavigationLeft img{
     width:80px;
-    height:60px;
+    height:75px;
 }
 .Navigation{
     background-color:white;
@@ -20,7 +21,7 @@ body{
 }
 
 .Navigation a{
-    color: #FB607F;
+    color: #FF327E;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
 
@@ -34,7 +35,7 @@ body{
 }
 .NavigationLeft a{
     padding-right: 30px;
-    color: #FB607F;
+    color: #FF327E;
 }
 .NavigationLeft a:nth-child(2){
     padding-left: 10px;
@@ -45,13 +46,13 @@ body{
 }
 .NavigationRight a{
   border-radius: 40px;
-  background-color: #FB607F;
+  background-color: #FF327E;
   color: #f1dfe3;
   padding: 15px;
 }
 .NavigationRight a:hover{
   background-color: #f1dfe3;
-  color: #FB607F;
+  color: #FF327E;
 }
 .Navigation .DropDown {
     display: inline-block;
@@ -63,7 +64,7 @@ body{
     font-size: 16px;
     border: none;
     cursor: pointer;
-    color: #FB607F;
+    color: #FF327E;
     background-color:white;
   }
   
@@ -78,14 +79,14 @@ body{
 
  .Navigation .dropdown-content a {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #FB607F;
+    color: #FF327E;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
   
  .Navigation .dropdown-content a:hover {
-    background-color:#FB607F;
+    background-color:#FF327E;
     color: #f1dfe3;
 
   }
@@ -106,16 +107,64 @@ body{
     background-position: center;
     background-size: cover; 
     height: 750px;
+    /* height: 100vh; */
     width: 100%;
 }
 
 .MainBackgroundImage .MainQuote{
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
-  color:#FB607F;
+  color:#FF327E;
   padding: 80px;
   font-size:60px;
   width: 250px;
   text-shadow: 2px 2px 4px black;
+  justify-content: center;
+}
+.MainQuote{
+  display: flex;
+  justify-content: center;
+}
+.MainQuote img{
+  width: 500px;
+  height: 450px;
+}
+
+.FunFacts{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #EFEFEF;
+  padding: 30px;
+  text-align: center;
+}
+.FunFacts p{
+  width: 200px;
+  height: 400px;
+  padding: 30px;
+  color: #FF327E;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px lightgray;
+  letter-spacing: 1px;
+}
+.Fact1{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.Fact2{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.Fact3{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
   justify-content: center;
 }
