@@ -175,3 +175,44 @@ body{
 .FactBox{
   box-shadow: 0 8px 16px #d2bac3;
 }
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 90px;
+  background-color: lightgray;
+}
+footer .elementsRight{
+    color: #FF327E;
+    padding-right: 150px;
+    width:320px;
+}
+
+
+footer .elementsLeft{
+  display: flex;
+  flex-wrap: wrap;
+ /* padding: 60px;*/
+  text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+}
+
+footer .f1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  padding: 10px;
+}
+footer .f1 p{
+  padding-left: 20px;
+  color: #FF327E;
+}
+footer .elementsLeft img{
+   height: 50px;
+   width: 50px;
+}
+
+
+
