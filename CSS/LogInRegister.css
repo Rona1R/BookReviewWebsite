@@ -1,0 +1,89 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.LogInBox{
+    background-color: aqua;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 450px;
+    width: 350px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.SignIn{
+    background-color: bisque;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+.SignUp{
+    background-color: blueviolet;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+}
+
+.UsernameBox{
+    background-color: azure;
+}
+.LogInBox{
+    background-color: brown;
+}
+form .UsernameBox,
+form .PasswordBox{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    text-align: center;
+    justify-content: center;
+    justify-content: space-evenly; 
+    /* width: 65.78px; */
+    height: 21px;
+    margin: 4px;
+
+}
+
+form .PasswordBox input,
+form .UsernameBox input{
+    height: 15px;
+    width: 160px;
+    justify-content: flex-end;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+
+form .PasswordBox label{
+    margin-right: 3px;
+    background-color: cadetblue;
+}
+
+.LogInBox img{
+    height: 100px;
+    width: 100px;
+}
+
+form button{
+    width: 100px;
+    padding: 5px;
+    justify-content: center;
+    margin: 10px;
+    border: none;
+    border-radius: 46px;
+}
