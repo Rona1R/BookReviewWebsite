@@ -104,6 +104,49 @@ body{
     display: block;
   }
 
+  /* ME BO NAVIGATION RESPOSNSIVE */
+  @media screen and (max-width: 600px){
+
+    .Navigation {
+      flex-direction: column;
+      align-items: center;
+       height: auto;/* Height auto qe automatikisht height mu adjust nbaz te gjatesise se kontenteve (aka Home,Genres etc)  */
+       /* margin-bottom: 60px; */
+  }
+
+    .MainContent{
+        padding-top: 60px;
+    }
+    .NavigationLeft,
+    .NavigationRight {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .NavigationLeft a,
+    .NavigationRight a {
+        padding: 10px;
+        font-size: 16px;
+        display: block;
+    }
+
+    .NavigationRight {
+        padding-top: 10px;
+        justify-content: center;
+    }
+
+    Footer .elementsRight{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align:  center;
+      padding-right: 0px;
+      padding-left: 60px;
+    }
+    
+  }
+    
 .MainContent .MainBackgroundImage{
     background-image: url("BackgroundFoto.jpeg");
     filter: brightness(60%);
