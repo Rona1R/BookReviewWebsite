@@ -123,6 +123,8 @@ body{
     text-align: center; */
     width: 100%;
     margin-top: 90px;
+    display: flex;
+    text-align: center;
   }
   /* ME BO NAVIGATION RESPOSNSIVE */
   @media screen and (max-width: 800px){
@@ -137,6 +139,7 @@ body{
     .MainContent{
         padding-top: 60px;
     }
+
     .NavigationLeft,
     .NavigationRight {
         width: 100%;
@@ -203,10 +206,19 @@ body{
   width: 500px;
   height: 450px;
 }
-.MainQuote{
+.MainQuote,
+.MainQuote1{
   display: flex;
   justify-content: center;
 }
+
+.MainQuote p{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-align: left;
+}
+
 .FunFacts{
   display: flex;
   flex-wrap: wrap;
