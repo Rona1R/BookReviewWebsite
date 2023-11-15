@@ -1,12 +1,13 @@
 body{
     margin: 0;
     background-color:white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:sans-serif;
 }
 .NavigationLeft img{
     width:80px;
     height:75px;
 }
+
 .Navigation{
     background-color:white;
     display: flex;
@@ -21,6 +22,7 @@ body{
     width: 100%;
     z-index: 1000;
 }
+
 
 .Navigation a{
     color: #FF327E;
@@ -45,18 +47,26 @@ body{
 }
 .NavigationRight{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     padding-right: 10px;
 }
-.NavigationRight a{
-  border-radius: 40px;
-  background-color: #FF327E;
-  color: #f1dfe3;
-  padding: 15px;
+.NavigationRight a:nth-child(1){
+  margin-right: 5px;
 }
+.NavigationRight a{
+  border-radius: 60px;
+  background-color: #FF327E;
+  color: white;
+  padding: 15px;
+  width:70px;
+  text-align: center;
+  justify-content: center;
+}
+
 .NavigationRight a:hover{
-  background-color: #f1dfe3;
-  color: #FF327E;
+  background-color: #E22D6F;
+  color: white;
+  /* color: rgba(255, 50, 254, 0.8); */
 }
 .Navigation .DropDown {
     display: inline-block;
@@ -91,21 +101,31 @@ body{
   
  .Navigation .dropdown-content a:hover {
     background-color:#FF327E;
-    color: #f1dfe3;
+    /* color: #f1dfe3; */
 
   }
+  .Navigation .dropButton:hover,
   .NavigationLeft a:hover{
-    color: #f1dfe3;
+    color: #E22D6F;
   }
-    .Navigation .dropButton:hover{
-    color:#f1dfe3;
+
+  .Navigation .dropdown-content a:hover{
+    background-color: #E22D6F;
+    color: white;
   }
+
  .Navigation .DropDown:hover .dropdown-content {
     display: block;
-  }
+  } 
 
+  .MainBackgroundImage{
+  /*   justify-content: center;
+    text-align: center; */
+    width: 100%;
+    margin-top: 90px;
+  }
   /* ME BO NAVIGATION RESPOSNSIVE */
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 800px){
 
     .Navigation {
       flex-direction: column;
@@ -136,24 +156,33 @@ body{
         justify-content: center;
     }
 
-    Footer .elementsRight{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align:  center;
-      padding-right: 0px;
-      padding-left: 60px;
-    }
-    
+  
   }
-    
-.MainContent .MainBackgroundImage{
+
+
+@media screen and (max-width:910px){
+    .FactBox{
+      margin: 20px;
+    }
+
+}    
+
+@media screen and (max-width:977.08px) {
+  
+  .responsiveFooter{
+    justify-content: space-around; /*qe kur tzvogl screen footerleft edhe footer right me dal bash ne mes*/
+  }
+  .elementsLeft{
+    margin-bottom: 30px;
+  }
+}
+/* .MainContent */.MainBackgroundImage{ 
     background-image: url("BackgroundFoto.jpeg");
     filter: brightness(60%);
-    filter: opacity(90%);
     background-position: center;
     background-size: cover; 
     height: 750px;
+    background-position: fixed;/* qita e shtova qe mos me u mshef backroundi prej nav bar-it po gjith me nejt perfundri
     /* height: 100vh; */
     width: 100%;
 }
@@ -168,20 +197,22 @@ body{
   text-shadow: 2px 2px 4px black;
   justify-content: center;
 }
-.MainQuote{
-  display: flex;
-  justify-content: center;
-}
+
+
 .MainQuote img{
   width: 500px;
   height: 450px;
 }
-
+.MainQuote{
+  display: flex;
+  justify-content: center;
+}
 .FunFacts{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #EFEFEF;
+  /* background-color: #EFEFEF; */
+  background-color: #FF327E;
   padding: 30px;
   text-align: center;
 }
@@ -189,13 +220,15 @@ body{
   width: 200px;
   height: 400px;
   padding: 30px;
-  color: #FF327E;
+  /* color: #FF327E; */
+  color: #6D7681;
+  font-weight: bold;
   font-weight: bolder;
-  text-shadow: 2px 2px 4px lightgray;
+  /* text-shadow: 2px 2px 4px darkgray; */
   letter-spacing: 1px;
 }
 .FunFacts p:hover{
-  color:rgb(114, 114, 114);
+  color:#E22D6F;
   /* text-shadow: 2px 2px 8px rgb(54, 54, 54); */
 }
 #Fact1{
@@ -220,21 +253,34 @@ body{
   justify-content: center;
 }
 .FactBox{
-  box-shadow: 0 8px 16px #d2bac3;
+  background-color: white;
+  box-shadow: 0 8px 16px #E22D6F;
 }
 footer{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 60px 90px;
-  background-color: lightgray;
+  background-color: white;
+  font-size: large;
+  font-weight: 700;
 }
 footer .elementsRight{
     color: #FF327E;
-    padding-right: 150px;
+    /* padding: 60px; */
     width:320px;
+    text-align: start;
+    width: 400px;
 }
-
+#end p{
+  font-size: 16px;
+  color: #6D7681;
+}
+.elementsRight h1{
+  margin: 0px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 footer .elementsLeft{
   display: flex;
