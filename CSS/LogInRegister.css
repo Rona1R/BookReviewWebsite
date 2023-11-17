@@ -1,33 +1,37 @@
 body{
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     height: 100vh;
+    margin: 0;
+    font-weight: bold;
 }
 
 .LogInBox{
-    background-color: aqua;
+    background-color:white;
+    border-radius: 9px;
+    box-shadow :0 0 20px 5px rgb(242, 150, 184);
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    height: 450px;
-    width: 350px;
+    padding:20px 0px; /*top/bottom,right-left */
+    width: 450px; 
     justify-content: space-evenly;
     margin: auto;
+    color: #FF327E;
 }
 
 .SignIn{
-    background-color: bisque;
     justify-content: center;
     flex-direction: column;
     display: flex;
     justify-content: center;
 }
-.SignUp{
-    background-color: blueviolet;
+.SignInTop p{
+    font-size: 30px;
 }
 
 form{
@@ -37,53 +41,81 @@ form{
     text-align: center;
     /* justify-content: space-between; */
     justify-content: center;
+    /* background-color: aqua; */
+    width: 100%;
 }
 
-.UsernameBox{
-    background-color: azure;
+.UsernameBox input,
+.LogInBox input{
+    padding: 4px;
 }
-.LogInBox{
-    background-color: brown;
+
+.SignInLabel{
+    width: 80px;
+    display: inline-block; /*kta e shtova se masi Label osht inline nuk e merr parasysh width-in e me ket rresht duhet me trajtu si elem block (edhe pse ende eshte inline)qe me u apliku width*/
+    text-align: end;
+    margin-right: 2%;
 }
-form .UsernameBox,
-form .PasswordBox{
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-    text-align: center;
-    justify-content: center;
-    justify-content: space-evenly; 
-    /* width: 65.78px; */
+
+form .SignInInfo{
     height: 21px;
-    margin: 4px;
-
+    margin-left: 6px;
+    margin-bottom: 13px;
 }
 
-form .PasswordBox input,
-form .UsernameBox input{
-    height: 15px;
-    width: 160px;
+
+.SignInInfo input{
+    height: 19px;
+    width: 180px;
     justify-content: flex-end;
     padding-right: 0px;
+    margin-top: 2px;
+    border:1px solid #8C8C8C;
     margin-right: 0px;
+    border-radius: 8px;
+    outline: none;
 }
 
-
+.SignInInfo input:focus{
+    border-width: 2px;
+    border-color: #FF327E;
+}
 form .PasswordBox label{
     margin-right: 3px;
-    background-color: cadetblue;
 }
 
 .LogInBox img{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 form button{
     width: 100px;
+    height: 50px;
     padding: 5px;
     justify-content: center;
     margin: 10px;
     border: none;
     border-radius: 46px;
+    color:white;
+    font-size:15px;
+    font-weight: 600;
+    background-color: #FF327E;
+}
+
+form button:hover{
+    background-color: white;
+    color: #FF327E;
+    box-shadow: 0 0 20px 5px rgb(242, 150, 184);
+}
+
+.SignUp p{
+    color: #8C8C8C;
+}
+.SignUp a{
+    color: #FF327E;
+    text-decoration: none;
+}
+.SignUp a:hover{
+    color: black;
 }

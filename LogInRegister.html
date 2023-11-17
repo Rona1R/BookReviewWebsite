@@ -9,20 +9,21 @@
 <body>
         <div class="LogInBox">
             <div class="SignIn">
-                <div>
+                <div class="SignInTop">
                     <img alt="LOGO" src="FOTOT/7naIo6-LogoMakr.png">
                     <p>Sign in to BookHub</p>
                 </div> 
                 <form>
-                    <div class="UsernameBox">  
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username">
+                    <div  class="SignInInfo" id="UsernameBox">  
+                        <label for="email" class="SignInLabel">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="example@gmail.com">
                     </div>
-                    <div class="PasswordBox">
-                        <label for="password">Password:</label>
+                    <div class="SignInInfo" id="PasswordBox">
+                        <label for="password" class="SignInLabel">Password:</label>
                         <input type="password" id="password" name="password">
                     </div>
-                    <div> 
+                        
+                    <div class="SubmitArea"> 
                         <button type="submit">Sign in</button>
                     </div>
                 </form>
