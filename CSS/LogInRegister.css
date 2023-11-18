@@ -67,7 +67,6 @@ form .SignInInfo{
 .SignInInfo input{
     height: 19px;
     width: 180px;
-    justify-content: flex-end;
     padding-right: 0px;
     margin-top: 2px;
     border:1px solid #8C8C8C;
