@@ -121,7 +121,8 @@ body{
   /*   justify-content: center;
     text-align: center; */
     width: 100%;
-    margin-top: 90px;
+    /*margin-top: 90px;*/
+    margin-top:100px;
     display: flex;
     text-align: center;
   }
@@ -183,7 +184,7 @@ body{
     filter: brightness(60%);
     background-position: center;
     background-size: cover; 
-    height: 750px;
+    height: 500px;
     background-position: fixed;/* qita e shtova qe mos me u mshef backroundi prej nav bar-it po gjith me nejt perfundri
     /* height: 100vh; */
     width: 100%;

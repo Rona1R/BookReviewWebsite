@@ -1,0 +1,46 @@
+main{
+    margin-top:100px;
+}
+
+/*media querys qe me shty main-in teposht kur tzovlohet faqja e mos me mi mlu Navigation bari-i*/
+@media screen and (max-width:800px) {
+    main{
+        margin-top: 180px;
+    }
+}
+
+@media screen and (max-width:453px) {
+    main{
+        margin-top: 230px;
+    }
+}
+
+.GenreIntroduction{
+    padding: 10px;
+    background-color: #ffe4ee;
+}
+
+.GenreIntroduction .path p{
+    font-size: 13px;
+    color: grey;
+}
+.GenreIntroduction .path a{
+    text-decoration: none;
+    color: #FF327E;
+}
+.GenreIntroduction .path a:hover{
+    text-decoration: underline;
+}
+.introduction h2{
+    font-size: 30px;
+    color: white;
+    
+}
+.introudction p{
+    width: 80%;
+}
+
+#bulletPoint{
+    color: #FF327E;
+    font-size: 20px;
+}
