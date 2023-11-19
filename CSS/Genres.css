@@ -17,7 +17,7 @@ main{
 
 .GenreIntroduction{
     padding: 10px;
-    background-color: #ffe4ee;
+    background-color: #fbe7ef;
 }
 
 .GenreIntroduction .path p{
@@ -31,10 +31,8 @@ main{
 .GenreIntroduction .path a:hover{
     text-decoration: underline;
 }
-.introduction h2{
-    font-size: 30px;
-    color: white;
-    
+.introudction h2{
+    color: #FF327E;
 }
 .introudction p{
     width: 80%;
