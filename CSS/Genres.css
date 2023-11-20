@@ -1,3 +1,4 @@
+
 main{
     margin-top:100px;
 }
@@ -41,4 +42,44 @@ main{
 #bulletPoint{
     color: #FF327E;
     font-size: 20px;
+}
+
+/* STILI I SLIDERI-it*/
+
+.slider-container {
+    position: relative;
+    display: flex;
+    overflow-x: auto; /*me shfaq sliderin per me bo scroll djathtas edhe majtas*/
+  }
+
+.slider-container::-webkit-scrollbar{
+    width: 12px;
+    /* background-color: #ecc6d4; */
+}
+
+.slider-container::-webkit-scrollbar-thumb{
+    background-color: #FF327E;
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background-color: #eddae1; /* ngjyra e scrollbar-it */
+  }
+
+.slider-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.book {
+    flex: 0 0 auto;
+    width: 200px; /*width-i i container-it tlibrave*/
+    height: 300px;
+    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.slider-content :not(:last-child){
+    margin-right: 10px;
 }
