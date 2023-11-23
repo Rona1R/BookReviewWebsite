@@ -228,6 +228,20 @@ body{
     width: 100%;
 }
 
+/*fotja me u dok ma e gat per screens ma tmadhaja:*/
+@media screen and (min-width:1250px) and (max-width:1540px) {
+      .MainBackgroundImage{
+        height: 600px;
+      }
+}
+
+@media screen and (min-width:1540px){
+  .MainBackgroundImage{
+    /* height: 800px; */
+    height: 30%;
+  }
+}
+
 .MainBackgroundImage .MainQuote{
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
