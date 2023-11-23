@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Genres.css">
     <link rel="stylesheet" href="CSS/BookReviewHomePage.css">
+    <link rel="stylesheet" href="CSS/Reviews.css">
     <title>Fantasy genre</title>
     <script src="JS/BookSlider.js"></script>
+    <script src="JS/Reviews.js"></script>
 </head>
 <body>
     <header>
@@ -57,45 +59,86 @@
                     <img src="book1.jpg" alt="Book 1">
                     <h3>Book Title 1</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L1Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 2">
                     <h3>Book Title 2</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L2Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 3">
                     <h3>Book Title 3</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L3Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 4">
                     <h3>Book Title 4</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L4Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 5">
                     <h3>Book Title 5</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L5Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 6">
                     <h3>Book Title 6</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L6Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 7">
                     <h3>Book Title 7</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L7Review')">Click to see reviews</button>
                 </div>
                 <div class="book">
                     <img src="book2.jpg" alt="Book 8">
                     <h3>Book Title 8</h3>
                     <p>Author: Author Name</p>
+                    <button onclick="displayReview('L8Review')">Click to see reviews</button>
                 </div>
             </div>
         </div>
         
+        <div class="ReviewDisplay" id="L1Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 1</p>
+            <button onclick="closeReview('L1Review')">Close Review</button>
+        </div>
+
+        <div class="ReviewDisplay" id="L2Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 2</p>
+            <button onclick="closeReview('L2Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L3Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 3</p>
+            <button onclick="closeReview('L3Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L4Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 4</p>
+            <button onclick="closeReview('L4Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L5Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 5</p>
+            <button onclick="closeReview('L5Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L6Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 6</p>
+            <button onclick="closeReview('L6Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L7Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 7</p>
+            <button onclick="closeReview('L7Review')">Close Review</button>
+        </div>
+        <div class="ReviewDisplay" id="L8Review">
+            <p>REVIEWS DO SHIHEN KTU per librin 8</p>
+            <button onclick="closeReview('L8Review')">Close Review</button>
+        </div>
     </main>
     <footer id="end" class="responsiveFooter">
         <div class="elementsLeft">

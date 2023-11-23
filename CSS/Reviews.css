@@ -1,0 +1,16 @@
+.ReviewDisplay{
+    background-color: antiquewhite;
+    display: block;
+    height: 600px;
+}
+
+#L1Review,
+#L2Review,
+#L3Review,
+#L4Review,
+#L5Review,
+#L6Review,
+#L7Review,
+#L8Review{
+    display: none;
+}
