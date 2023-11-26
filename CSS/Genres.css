@@ -47,6 +47,7 @@ main{
 /* STILI I SLIDERI-it*/
 
 .slider-container {
+    height: 500px;
     position: relative;
     display: flex;
     overflow-x: auto; /*me shfaq sliderin per me bo scroll djathtas edhe majtas*/
@@ -68,7 +69,7 @@ main{
 .slider-content{
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px;
 }
 .book {
@@ -84,3 +85,10 @@ main{
     margin-right: 10px;
 }
 
+.book img{
+    height: 300px;
+    width: 200px;
+}
+.book h3,p{
+    font-size: 15px;
+}
