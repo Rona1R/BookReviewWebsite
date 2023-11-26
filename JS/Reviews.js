@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
     newReview.className = "UserReview";
     newReview.textContent = review; // vendoset review e user-it brenda ktij div-i(e stilizoj ne css)
     
+
     display.appendChild(newReview);
+
     console.log(display);
     console.log("komenti"+komenti.value);
     komenti.value="" ;// me resetu tekstin e komentit pasi qe ai te behet add
@@ -81,11 +83,21 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
         // elementi prind te ciles i perket secila forme:
         var displayPRIND = formaSpecifike.parentNode; // per secilen forme ,merre display-ne specifike
         console.log(displayPRIND);
+
+        var displayIKomenteve = displayPRIND.lastElementChild; //:User Review block
+      //  console.log("display i komenteve: "+displayIKomenteve.getAttribute("id"));
+        var commentBLOCKID = displayIKomenteve.getAttribute("id");
+        console.log("BLOCK ID specifik:"+commentBLOCKID);
+
         var displayID = displayPRIND.getAttribute("id"); // marr id-ne e display-s
+
+        // id-ne e User review block:
+        // var reviewBlockID = displayIKomenteve.getAttribute("id");
         var teksti = formaSpecifike.querySelector("textarea");
         var komentiID = teksti.getAttribute("id"); // marr id-ne e komentin
         
-        addReview(displayID,komentiID); // ia qoj si parameter funksionit display-ne ID ku do insertohet display dhe komentiID qe tregon komentin qe ka mu insertu
+        // addReview(displayID,komentiID); // ia qoj si parameter funksionit display-ne ID ku do insertohet display dhe komentiID qe tregon komentin qe ka mu insertu
+        addReview(commentBLOCKID,komentiID); // ia qoj si parameter funksionit display-ne ID ku do insertohet display dhe komentiID qe tregon komentin qe ka mu insertu
 
     });
    });
