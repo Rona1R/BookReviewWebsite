@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
     newReview.textContent = review; // vendoset review e user-it brenda ktij div-i(e stilizoj ne css)
     
 
-    display.appendChild(newReview);
+    // display.appendChild(newReview); me bo qe nfillim te display-te me dal komenti qe e shtojme
+    display.insertBefore(newReview,display.firstChild);
 
     console.log(display);
     console.log("komenti"+komenti.value);
