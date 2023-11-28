@@ -7,9 +7,20 @@
   
 }
 
+.ReviewDisplay textarea,
+.UserReview{
+  background-color: #f5f5f5;
+}
+.ReviewDisplay textarea:focus{
+  outline: none;
+  border-color: #ff5a8e;
+}
+
 .ReviewDisplay p{
-  color: white;
-  font-size: bold;
+  color: white; 
+  font-weight:400;
+  font-size: large;
+  letter-spacing:1px;
 }
 
 .UserReviewContainer{

@@ -18,12 +18,15 @@ main{
 
 .GenreIntroduction{
     padding: 10px;
-    background-color: #fbe7ef;
+    /* background-color: #fbe7ef; */
+    background-color:#ffe6ea;
+    color:#333;
 }
 
 .GenreIntroduction .path p{
     font-size: 13px;
     color: grey;
+  
 }
 .GenreIntroduction .path a{
     text-decoration: none;
@@ -91,4 +94,5 @@ main{
 }
 .book h3,p{
     font-size: 15px;
+    color:#333;;
 }
