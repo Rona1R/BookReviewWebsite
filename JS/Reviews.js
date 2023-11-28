@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
   }
   
 
+  
+
   // KODI PER INSERTIMI-n e komenteve ne secilen reviewDisplay per secilin liber
     // qe sbon ko mu fur
   //   var reviewDisplays = document.querySelectorAll(".ReviewDisplay");  KJO MA NALT U BO
