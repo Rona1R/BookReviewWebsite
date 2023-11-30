@@ -7,8 +7,17 @@ var releasesIMG = [
     "FOTOT/DeadRomantics.png",
     "FOTOT/LoveAtFirstLike.jpg"];
 
+var genres = [
+    "Fantasy.html",
+    "Fantasy.html",
+    "Romance.html",
+    "Romance.html"
+]
+
 function updateIMG(){
+    
     document.getElementById('slideShow').src = releasesIMG[i];
+    document.getElementById('GenreLink').href = genres[i];
     if(i<releasesIMG.length-1){
         i++;
     }
