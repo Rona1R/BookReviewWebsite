@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookReview - HomePage</title>
     <link rel="stylesheet" href="CSS/BookReviewHomePage.css" >
+    <script src="JS/SlideShow.js"></script>
 </head>
 <body>
     <header>
@@ -43,8 +44,25 @@
                     <p>Meet your next favorite book</p>
                 </div>
             </div> -->
-            <div class="MainQuote1">
-                <img src="FOTOT/download.jpeg" alt="GeorgeMartinQuote">
+            <div class="NewestReleases">
+                <div class="PREVIOUS" >
+                    <button id="previous" onclick="updateIMGPrevious()">
+                        Previous
+                    </button>
+                </div>
+                <div class="ReleasesBOX">
+                    <div>
+                        <h3>Newest Releases</h3>
+                    </div>
+                    <div>
+                        <img id="slideShow">
+                    </div>
+                </div>
+                <div class="NEXT">  
+                    <button id="next" onclick="updateIMG()">
+                        Next
+                    </button>
+                </div>
             </div>
 
             <div class="FunFacts">

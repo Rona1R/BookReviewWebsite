@@ -3,6 +3,7 @@ body{
     background-color:white;
     font-family:sans-serif;
     overflow-x: hidden; /*mos me ta qit vertical scrolling*/
+    width: 100%;
 }
 
 .NavigationLeft img{
@@ -259,19 +260,71 @@ body{
   width: 500px;
   height: 450px;
 }
-.MainQuote,
-.MainQuote1{
+.MainQuote{
   display: flex;
   justify-content: center;
 }
 
+.NewestReleases{
+  display: flex;
+  justify-content:space-around ;
+  align-items: center;
+  /* padding:20px 50px; */
+}
 
-.MainQuote1{
+@media screen and (max-width:1200px){
+  .NewestReleases{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+}
+
+#previous,
+#next{
+  background-color: #FF327E; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 70px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90px;
+}
+
+#previous:hover,
+#next:hover {
+  background-color: white;
+  color: #FF327E; 
+}
+.NewestReleases img{
+  height: 450px;
+  width: 300px;
+}
+
+.NewestReleases{
   margin-top: 0;
+  padding-bottom: 10px;
 }
-.MainQuote1 img{
+
+.NewestReleases h3{
+  color: #FF327E;
+  font-size:30px;
+  letter-spacing: 0.5px;
+}
+.ReleasesBOX{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+.ReleasesBOX h3{
+  display: flex;
+  justify-content: center;
+}
+
+/* .NewestReleases img{
   width: 50%;
-}
+} */
 
 .MainQuote p{
   display: flex;

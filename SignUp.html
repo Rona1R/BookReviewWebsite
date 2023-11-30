@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up FORM</title>
     <link rel="stylesheet" href="CSS/LogInRegister.css">
+    <script src="JS/RegisterValidimi.js"></script>
 </head>
 <body>
         <div class="LogInBox">
@@ -13,7 +14,7 @@
                     <img alt="LOGO" src="FOTOT/7naIo6-LogoMakr.png">
                     <p>Sign up to BookHub</p>
                 </div> 
-                <form>
+                <form onsubmit="return registerValidimi()">
                     <div  class="SignInInfo" id="UsernameBox">  
                         <label for="email" class="SignInLabel">Email:</label>
                         <input type="text" id="email" name="email" placeholder="example@gmail.com">
