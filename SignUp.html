@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up FORM</title>
     <link rel="stylesheet" href="CSS/LogInRegister.css">
-    <script src="JS/RegisterValidimi.js"></script>
+    <script src="JS/FormaValidimi.js"></script>
 </head>
 <body>
         <div class="LogInBox">
@@ -14,16 +14,20 @@
                     <img alt="LOGO" src="FOTOT/7naIo6-LogoMakr.png">
                     <p>Sign up to BookHub</p>
                 </div> 
-                <form onsubmit="return registerValidimi()">
+                <form onsubmit="return validate2()">
                     <div  class="SignInInfo" id="UsernameBox">  
-                        <label for="email" class="SignInLabel">Email:</label>
-                        <input type="text" id="email" name="email" placeholder="example@gmail.com">
+                        <label for="email1" class="SignInLabel">Email:</label>
+                        <input type="text" id="email1" name="email" placeholder="example@gmail.com">
                     </div>
                     <div class="SignInInfo" id="PasswordBox">
-                        <label for="password" class="SignInLabel">Password:</label>
-                        <input type="password" id="password" name="password">
+                        <label for="password1" class="SignInLabel">Password:</label>
+                        <input type="password" id="password1" name="password">
                     </div>
                         
+                    <div class="SignInInfo">
+                        <label for="confirm" class="SignInLabel">Confirm:</label>
+                        <input type="password" id="confirm" name="password">
+                    </div>
                     <div class="SubmitArea"> 
                         <button type="submit">Sign up</button>
                     </div>
