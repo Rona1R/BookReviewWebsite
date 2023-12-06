@@ -2,6 +2,8 @@
 main{
     margin-top:100px;
     padding: 30px;
+   
+/*     justify-content: center; */
 }
 
 @media screen and (max-width:800px) {
@@ -12,14 +14,13 @@ main{
 
 @media screen and (max-width:453px) {
     main{
-        margin-top: 230px;
+        margin-top: 150px;
     }
 }
 
 .quote{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -29,8 +30,25 @@ main{
     color:#333;
 }
 
+@media screen and (max-width:990px) {
+  .quote p{
+    width: 600px;
+  }
+}
+
+@media screen and (max-width:772px) {
+    .quote p{
+      width: 450px;
+    }
+  }
+
+@media screen and (max-width:620px) {
+    .quote p{
+      width: 150px;
+    }
+  }
 .quote img{
-    width: 90px;
+    width: 100px;
     height: 100px;
 }
 
