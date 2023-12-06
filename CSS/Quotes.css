@@ -1,0 +1,39 @@
+
+main{
+    margin-top:100px;
+    padding: 30px;
+}
+
+@media screen and (max-width:800px) {
+    main{
+        margin-top: 180px;
+    }
+}
+
+@media screen and (max-width:453px) {
+    main{
+        margin-top: 230px;
+    }
+}
+
+.quote{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote p{
+    margin-right: 20px;
+    font-size: large;
+    color:#333;
+}
+
+.quote img{
+    width: 90px;
+    height: 100px;
+}
+
+hr{
+    color: #FF327E; /*sdi pse spo ndrrohet ngjyra*/
+}
