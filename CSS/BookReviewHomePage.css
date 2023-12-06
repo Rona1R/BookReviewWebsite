@@ -428,5 +428,45 @@ footer .elementsLeft img{
    width: 50px;
 }
 
+footer .elementsMiddle{
+  padding-bottom: 30px;
+}
 
+footer li:first-child{
+  color: #E22D6F;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
 
+footer li{
+  font-size: 16px;
+  color: #6D7681;
+  padding-bottom: 7px;
+  
+}
+
+footer ul{
+  text-align: center;
+}
+
+.elementsMiddle a{
+  text-decoration: none;
+  color: #6D7681;
+}
+.elementsRight a{
+  font-size: 13px;
+  color: #9e9e9f;
+}
+
+.quotes{
+  background-color: #FF327E;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.quotes a{
+  color: white;
+  text-decoration: underline;
+}
