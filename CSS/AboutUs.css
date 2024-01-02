@@ -1,0 +1,119 @@
+
+main{
+    margin-top:100px;
+    overflow-x: hidden;
+}
+
+/*media querys qe me shty main-in teposht kur tzovlohet faqja e mos me mi mlu Navigation bari-i*/
+@media screen and (max-width:800px) {
+    main{
+        margin-top: 180px;
+    }
+}
+
+@media screen and (max-width:453px) {
+    main{
+        margin-top: 230px;
+    }
+}
+
+
+img {
+  padding: 20px;
+  width: 400px;
+  height: 350px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #d17798;
+  padding: 30px;
+}
+
+.p1 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.p1info p {
+  width: 400px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 20px;
+}
+#f1title {
+  /* font-weight: bolder;
+    color:#FF327E;
+    text-align: center;*/
+  font-weight: bolder;
+  color: #ff327e;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.p1info p:hover {
+  color: #e22d6f;
+}
+.p1 {
+  background-color: white;
+  box-shadow: 0 8px 16px #c13b6c;
+}
+
+.main2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.ThirdParagraph p {
+  width: 380px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 20px;
+}
+
+.ThirdParagraph {
+  width: fit-content;
+}
+
+#p3title {
+  font-weight: bolder;
+  color: #ff327e;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.SocialMedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 16px rgba(193, 59, 108, 0.1);
+  margin: 20px;
+}
+
+.SocialMedia img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.social-content {
+  display: flex;
+  align-items: center;
+}
+#p3info {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 10px;
+}
+
+a {
+  color: #e22d6f;
+}
