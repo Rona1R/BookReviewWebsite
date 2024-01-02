@@ -1,0 +1,41 @@
+
+main{
+    margin-top: 100px;
+    background-color:rgb(242, 241, 241);
+}
+@media screen and (max-width:800px) {
+    main{
+        margin-top: 180px;
+    }
+
+    .PrivacyPolicy p{
+        width: 400px;
+    }
+    .PrivacyPolicy h1{
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width:453px) {
+    main{
+        margin-top: 180px;
+    }
+}
+
+
+ .PrivacyPolicy{
+   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 50px;
+    width:800px ;
+ }
+
+ .PrivacyPolicy h1{
+    color: #ff327e;
+ }
+
+hr{
+    margin: 0;
+}

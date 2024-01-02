@@ -105,6 +105,7 @@ img {
   border: 1px solid #e0e0e0;
   box-shadow: 0 8px 16px rgba(193, 59, 108, 0.1);
   margin: 20px;
+
 }
 
 .SocialMedia img {
@@ -116,6 +117,8 @@ img {
 .social-content {
   display: flex;
   align-items: center;
+  width: 400px;
+  
 }
 #p3info {
   font-family: Georgia, "Times New Roman", Times, serif;

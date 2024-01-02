@@ -471,3 +471,9 @@ footer ul{
   color: white;
   text-decoration: underline;
 }
+
+#Privacy p{
+  text-align: end;
+  font-size: smaller;
+  color: #9e9e9f;
+}
