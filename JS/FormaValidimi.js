@@ -1,21 +1,21 @@
+
 function validate(){
-    var email = document.getElementById("email").value;
-    var pass = document.getElementById("password").value;
 
+    var email = document.getElementById("email").value.trim();
+    var pass = document.getElementById("password").value.trim();
+    var username = document.getElementById("usernameID").value.trim();
     var emailREGEX = /^[a-zA-Z.-_]+@[^\s@]+\.[a-z]{3,3}$/;
-    // var passREGEX = /^[A-Z]+[a-zA-Z]+[0-9]{3}$/
     var passREGEX = /^[A-Z]+[A-Za-z!*?0-9]{7,}$/;
-
-    /*if(!(name.length>8 && name.length<15 && nameREGEX.test(name))){
-        alert("Username nuk eshte shkruar ne rregull!!");
-        return false;
-    }*/
+    var usernameREGEX = /^[a-zA-Z][a-zA-Z0-9-_]{4,}$/;
 
     if(!emailREGEX.test(email)){
         alert("Email nuk eshte shkruar ne rregull!!");
         return false;
     }
-
+    if(!usernameREGEX.test(username)){
+        alert("Username duhet te filloje me shkronje dhe te kete me shume se 4 karaktere!!");
+        return false;
+    }
     if(!passREGEX.test(pass)){
         alert("Passwordi duhet te filloje me shkronje te madhe,te permbaje *,! ose ? dhe te kete minimalisht 8 karaktere!!");
         return false;
@@ -28,18 +28,23 @@ function validate(){
 // kjo eshte per register
 function validate2(){
 
-    var email = document.getElementById("email1").value;
-    var pass = document.getElementById("password1").value;
+    var email = document.getElementById("email1").value.trim();
+    var pass = document.getElementById("password1").value.trim();
+    var username = document.getElementById("usernameID2").value.trim();
     var confirm = document.getElementById("confirm").value;
 
     var emailREGEX = /^[a-zA-Z.-_]+@[^\s@]+\.[a-z]{3,3}$/;
     var passREGEX = /^[A-Z]+[A-Za-z!*?0-9]{7,}$/;
+    var usernameREGEX = /^[a-zA-Z][a-zA-Z0-9-_]{4,}$/;
 
     if(!emailREGEX.test(email)){
         alert("Email nuk eshte shkruar ne rregull!!");
         return false;
     }
-
+    if(!usernameREGEX.test(username)){
+        alert("Username duhet te filloje me shkronje dhe te kete me shume se 4 karaktere!!");
+        return false;
+    }
     if(!passREGEX.test(pass)){
         alert("Passwordi duhet te filloje me shkronje te madhe,te permbaje *,! ose ? dhe te kete minimalisht 8 karaktere!!");
         return false;
@@ -52,3 +57,4 @@ function validate2(){
     return true;
 
 }
+

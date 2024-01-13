@@ -15,8 +15,8 @@
         </div>
     </div>
     <div class="NavigationRight">
-        <a href="LogInRegister.html" target="_parent"><b>Log In</b></a>
+        <a href="LogInRegister.php" target="_parent"><b>Log In</b></a>
         <!--target per me mujt mu kthy mrapa ne homepage me shigjete-->
-        <a href="Signup.html" target="_parent"><b>Sign Up</b></a>
+        <a href="SignUp.php" target="_parent"><b>Sign Up</b></a>
     </div>
 </div>

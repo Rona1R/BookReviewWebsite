@@ -51,7 +51,7 @@ form{
     width: 100%;
 }
 
-.UsernameBox input,
+.EmailBox input,
 .LogInBox input{
     padding: 4px;
 }
