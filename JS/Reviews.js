@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
     let reviews = document.querySelectorAll(".ReviewDisplay");
     //let reviews = document.getElementsByClassName('ReviewDisplay'); edhe kshtu bon
     for (let i = 0; i < reviews.length; i++) {
-      reviews[i].style.display = "none";
+      reviews[i].style.display = "none"; // me u mbyll review displays te tjera para se me u shfaq ajo e cila e kemi bo click
     }
     document.getElementById(idLibri).style.display = "block";
   }
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
     var komenti = document.getElementById(komentiID);
     //var komenti = document.getElementById("komenti");
     var review = komenti.value; // komenti qe e ka type Useri
+
     var newReview = document.createElement("div");
     newReview.className = "UserReview";
     newReview.textContent = review; // vendoset review e user-it brenda ktij div-i(e stilizoj ne css)
@@ -98,7 +99,11 @@ document.addEventListener("DOMContentLoaded", function () { // e shtova se nuk i
         // var reviewBlockID = displayIKomenteve.getAttribute("id");
         var teksti = formaSpecifike.querySelector("textarea");
         var komentiID = teksti.getAttribute("id"); // marr id-ne e komentin
-        
+        var review = teksti.value; // komenti qe e ka type Useri
+        if (review.trim() === '') {
+            alert("Comment can not be empty!!");
+            return;  // dil nga funksioni (mos mu ekzekutu add Review hiq per komentet e zbrazeta)
+        }
         // addReview(displayID,komentiID); // ia qoj si parameter funksionit display-ne ID ku do insertohet display dhe komentiID qe tregon komentin qe ka mu insertu
         addReview(commentBLOCKID,komentiID); // ia qoj si parameter funksionit display-ne ID ku do insertohet display dhe komentiID qe tregon komentin qe ka mu insertu
 

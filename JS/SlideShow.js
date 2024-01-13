@@ -8,10 +8,10 @@ var releasesIMG = [
     "FOTOT/LoveAtFirstLike.jpg"];
 
 var genres = [
-    "Fantasy.html",
-    "Fantasy.html",
-    "Romance.html",
-    "Romance.html"
+    "Fantasy.php",
+    "Fantasy.php",
+    "Romance.php",
+    "Romance.php"
 ]
 
 function updateIMG(){
@@ -26,7 +26,9 @@ function updateIMG(){
     }
 }
 
+document.addEventListener('DOMContentLoaded', function(updateIMG) {
 
+});
 
 
 window.addEventListener('load', updateIMG);
