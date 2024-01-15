@@ -20,9 +20,8 @@ include_once("logInFunc/handleUserSession.php");
     </div>
     <div class="NavigationRight">
       <div class="Top">
-        <a href="LogInRegister.php" target="_parent"><b>Log In</b></a>
-      <!--target per me mujt mu kthy mrapa ne homepage me shigjete-->
-         <a href="SignUp.php" target="_parent"><b>Sign Up</b></a>
+        <!-- <a href="LogInRegister.php" target="_parent"><b>Log In</b></a>
+         <a href="SignUp.php" target="_parent"><b>Sign Up</b></a> -->
      </div>
      <div class="Bottom">
         <p><?php echo $_SESSION['username'];?></p>
