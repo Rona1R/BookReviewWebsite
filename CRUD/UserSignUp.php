@@ -32,7 +32,7 @@ class UserSignUp extends DbConnect{
             if($userCount == 0 && $emailCount==0){
                 if($this->conn->query($query)){
                        // return True;
-                    header('Location: ../LogInRegister.php');
+                    header('Location: LogInRegister.php');
                     exit;
               }
             }

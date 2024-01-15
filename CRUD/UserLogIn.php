@@ -44,6 +44,7 @@ class UserLogIn extends DbConnect{
                    $_SESSION['password'] = $pass;
                    $_SESSION['email'] = $emailAddress;
                    $_SESSION['role'] = $userInDB['Role'];
+                   $_SESSION['logged_in'] = true;
                    header("Location:BookReviewHomePage.php");
                    exit();
                 }

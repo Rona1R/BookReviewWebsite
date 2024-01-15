@@ -26,6 +26,7 @@ include_once("logInFunc/handleUserSession.php");
      </div>
      <div class="Bottom">
         <p><?php echo $_SESSION['username'];?></p>
+        <a href="logInFunc/logOut.php">LogOut</a>
      </div>
     </div>
   </div>
