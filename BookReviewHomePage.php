@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="CSS/BookReviewHomePage.css" >
     <script src="JS/SlideShow.js"></script>
 </head>
+
+
 <body>
     <header>
-        <?php include('Navigation.php')?>
+    <?php 
+      include_once("logInFunc/handleUserSession.php"); // ket include duhesh me bo ne secilen faqe se duhet me tu bo create session ne secilen faqe ku navigon useri
+    ?> 
+    <?php include('Navigation.php')?>
     </header>
     <main>
         <div class="MainBackgroundImage"> 

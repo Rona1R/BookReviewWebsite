@@ -14,7 +14,7 @@
                     <img alt="LOGO" src="FOTOT/7naIo6-LogoMakr.png">
                     <p>Sign in to BookHub</p>
                 </div> 
-                <form  id='logInForm' >
+                <form  id='logInForm' method='POST'>
                     <div  class="SignInInfo" id="EmailBox">  
                         <label for="email" class="SignInLabel">Email:</label>
                         <input type="text" id="email" name="email" placeholder="example@gmail.com">
@@ -31,7 +31,7 @@
                     </div>
                         
                     <div class="SubmitArea"> 
-                        <button type="submit" onclick="return validate()">Sign in</button>
+                        <button type="submit" onclick="return validate()" name="loginSubmit">Sign in</button>
                     </div>
                 </form>
             </div>
@@ -40,6 +40,13 @@
             </div>
         </div>
 </body>
+
+<?php 
+include_once('CRUD/UserLogIn.php');
+$logUser = new UserLogIn();
+
+$logUser->logIn();
+?>
 
 
 </html>
