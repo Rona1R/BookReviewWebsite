@@ -11,6 +11,17 @@ body{
     height:75px;
 }
 
+.NavigationRight{
+  display: flex;
+  flex-direction:column ;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.NavigationRight .Bottom p{
+  padding: 0px;
+  font-size: smaller;
+}
 
 @media  screen and (max-width:800px) {
   main{
@@ -54,15 +65,15 @@ body{
 .NavigationLeft a:nth-child(2){
     padding-left: 10px;
 }
-.NavigationRight{
+.Top{
     display: flex;
     justify-content: space-between;
     padding-right: 10px;
 }
-.NavigationRight a:nth-child(1){
+.Top a:nth-child(1){
   margin-right: 5px;
 }
-.NavigationRight a{
+.Top a{
   border-radius: 60px;
   background-color: #FF327E;
   color: white;
@@ -72,7 +83,7 @@ body{
   justify-content: center;
 }
 
-.NavigationRight a:hover{
+.Top a:hover{
   background-color: #E22D6F;
   color: white;
   /* color: rgba(255, 50, 254, 0.8); */
@@ -161,20 +172,20 @@ body{
     } */
 
     .NavigationLeft,
-    .NavigationRight {
+    .Top {
         width: 100%;
         padding: 10px;
         text-align: center;
     }
 
     .NavigationLeft a,
-    .NavigationRight a {
+    .Top a {
         padding: 10px;
         font-size: 16px;
         display: block;
     }
 
-    .NavigationRight {
+    .Top {
         padding-top: 10px;
         justify-content: center;
     }
@@ -477,3 +488,4 @@ footer ul{
   font-size: smaller;
   color: #9e9e9f;
 }
+
