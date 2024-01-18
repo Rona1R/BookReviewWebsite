@@ -17,18 +17,36 @@ include_once("logInFunc/handleUserSession.php");
           <!-- <a href="#">Genre 3</a> -->
         </div>
       </div>
+      <!-- <?php echo $hide?> -->
+      <a id=<?php echo $hide?>><b>Dashboard</b></a>
     </div>
     <div class="NavigationRight">
-      <div class="Top">
-        <!-- <a href="LogInRegister.php" target="_parent"><b>Log In</b></a>
-         <a href="SignUp.php" target="_parent"><b>Sign Up</b></a> -->
-     </div>
-     <div class="Bottom">
-        <p><?php echo $_SESSION['username'];?></p>
-        <a href="logInFunc/logOut.php">LogOut</a>
+        <!-- <div class="Bottom">
+          <a href="LogInRegister.php" target="_parent"><b>Log In</b></a>
+          <a href="SignUp.php" target="_parent"><b>Sign Up</b></a> 
+        </div>  -->
+     <div class="Top">
+        <p id='userDisplay'><?php echo $_SESSION['username'];?></p>
+        <a href="logInFunc/logOut.php"><b>Log Out</b></a>
      </div>
     </div>
   </div>
 
  
+<style>
 
+#userDisplay{
+    color: #FF327E;
+    font-weight: bold;
+    padding-right: 10px;
+    text-shadow: 1px 2px 3px #dcdcdc;
+}
+
+#adminDashboard{
+  padding-left: 8px;
+  display: none;
+}
+
+
+
+</style>

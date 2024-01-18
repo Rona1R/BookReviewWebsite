@@ -7,8 +7,8 @@ class UserSignUp extends DbConnect{
     private $conn; 
 
     public function __construct(){
-        // parent::__construct(); 
-        $this->conn = parent::connectDB();
+         $this->conn = parent::connectDB();
+       
     }
 
     public function addUser(){

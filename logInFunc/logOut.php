@@ -1,10 +1,8 @@
 <?php 
 
-// to be continued
-
 session_start();
 
-$_SESSION = array();
+// $_SESSION = array(); e panevojshme e komentova 
 
 session_destroy();
 

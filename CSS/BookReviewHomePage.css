@@ -80,6 +80,7 @@ body{
   padding: 15px;
   width:70px;
   text-align: center;
+  height: fit-content;
   justify-content: center;
 }
 
@@ -147,6 +148,7 @@ body{
     display: flex;
     text-align: center;
   }
+
   /* ME BO NAVIGATION RESPOSNSIVE */
   @media screen and (max-width: 800px){
 

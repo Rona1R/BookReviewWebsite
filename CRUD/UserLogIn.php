@@ -1,29 +1,14 @@
 <?php
 
 include_once('dbConnect.php');
-class UserLogIn extends DbConnect{
+include_once('Functions.php');
+class UserLogIn extends DbConnect{ 
 
     private $conn; 
 
     public function __construct(){
-        // parent::__construct(); 
-        $this->conn = parent::connectDB();
+         $this->conn = parent::connectDB();
     }
-      
-    public function getAllUsers($table){
-
-        $usersData = null;
-
-        $getUsers = "SELECT * FROM $table";
-        $getUsersQuery = $this->conn->query($getUsers);
-        if ($getUsersQuery) {
-            while ($row = mysqli_fetch_assoc($getUsersQuery)) {
-                $usersData[]= $row;
-            }
-        }
-
-        return $usersData;
-    } 
 
     public function logIn(){
 
@@ -33,7 +18,10 @@ class UserLogIn extends DbConnect{
             $pass=$_POST['password'];
             $emailAddress=$_POST['email'];
             
-            $usersAll = $this->getAllUsers('users');
+            // $usersAll = $this->getAllUsers('users');
+            $func = new Functions();
+
+            $usersAll = $func->getAllData('users');
 
             foreach($usersAll as $userInDB){
                 if ($user == $userInDB['Username'] && $pass == $userInDB['Password']

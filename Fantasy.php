@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,9 +41,37 @@
             for those who delve into its page.
           </p>
         </div>
-      </div>
-
+      </div> 
       <div class="slider-container">
+        <div class="slider-content">
+
+            <?php 
+              include_once('CRUD/Books.php');
+              $books = new Books();
+              $booksData = $books->getAllBooks(); # te dhenat e librav i run ne array asociativ ,ku qelesat jane emrat e kolonave nga tabela ne databaze
+              
+              foreach($booksData as $book){
+                echo "<div class='book'>";
+                $autori = $books->getAuthor($book['BookTitle']); # kthe autorin e atij libri 
+                if($book['Genre'] == 'Fantasy'){
+                  
+                  echo "<img src={$book['Src']} alt={$book['BookTitle']} />
+                        <h3>{$book['BookTitle']}</h3>
+                        <p>Author: {$autori['Emri']} {$autori['Mbiemri']}</p>
+                        <button class='showReview'>Click to see reviews</button>";
+        
+                }
+                echo "</div>";
+              }
+        
+          
+          ?>
+        </div>
+      </div> 
+
+
+
+      <!-- <div class="slider-container">
         <div class="slider-content">
           <div class="book">
             <img src="FOTOT/BelieveMe.jpg" alt="Believe Me" />
@@ -93,13 +122,14 @@
             <button class="showReview">Click to see reviews</button>
           </div>
         </div>
-      </div>
+      </div> -->
+
+      <!----------------------------------------------------------------------------------- -->
 
       <!-- ne KETA CONTAINERS do vendosen reviews per secilin liber specifik-->
 
       <div class="ReviewDisplay" id="L1Review">
         <p>Believe me</p>
-        <!-- <button onclick="closeReview('L1Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL1">
           <label for="komentiL1">Leave your review:</label>
@@ -108,13 +138,11 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock1">
-          <!-- ktu kan mu bo append komentet e userit (UserReview)-->
         </div>
       </div>
 
       <div class="ReviewDisplay" id="L2Review">
         <p>Game of Thrones</p>
-        <!-- <button  onclick="closeReview('L2Review')" >Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL2">
           <label for="komentiLL2">Leave your review:</label>
@@ -123,12 +151,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock2">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L3Review">
         <p>The Ballad Of Songbirds and Snakes</p>
-        <!-- <button onclick="closeReview('L3Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL3">
           <label for="komentiL3">Leave your review:</label>
@@ -137,12 +163,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock3">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L4Review">
         <p>Harry Potter</p>
-        <!-- <button onclick="closeReview('L4Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL4">
           <label for="komentiL4">Leave your review:</label>
@@ -151,12 +175,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock4">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L5Review">
         <p>Divergent</p>
-        <!-- <button onclick="closeReview('L5Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL5">
           <label for="komentiL5">Leave your review:</label>
@@ -165,12 +187,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock5">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L6Review">
         <p>Insurgent</p>
-        <!-- <button onclick="closeReview('L6Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL6">
           <label for="komentiL6">Leave your review:</label>
@@ -179,12 +199,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock6">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L7Review">
         <p>Court Of Wings and Ruin</p>
-        <!-- <button onclick="closeReview('L7Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL7">
           <label for="komentiL7">Leave your review:</label>
@@ -193,12 +211,10 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock7">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
       <div class="ReviewDisplay" id="L8Review">
         <p>Four</p>
-        <!-- <button onclick="closeReview('L8Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL8">
           <label for="komentiL8">Leave your review:</label>
@@ -207,7 +223,6 @@
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock8">
-          <!-- ktu kan mu bo append komentet e userit-->
         </div>
       </div>
     </main>
