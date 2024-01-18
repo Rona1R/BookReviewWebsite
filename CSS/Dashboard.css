@@ -1,10 +1,11 @@
 
+
 .TableContainer{
-    margin-top: 120px;
+    margin-top: 120px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column;   
 }
 
 
@@ -13,14 +14,34 @@
 }
 @media screen and (max-width: 800px) {
     .TableContainer{
-        margin-top: 210px;
+        padding: 20px;
+        margin-top: 0;
     }
 
-}
+    
+    .scrollTable{
+         display: flex;
+         overflow-x: auto;
+         height: fit-content;
+    }
+
+    .scrollTable::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    .scrollTable::-webkit-scrollbar-thumb{
+        background-color:#ff99cc;
+    }
+
+    .scrollTable::-webkit-scrollbar-track {
+        background-color: #eddae1; 
+    }   
+    }
 
 @media screen and (max-width: 453px) {
-    main .dashboard{
-        margin-top: 230px;
+    .TableContainer{
+        padding: 20px;
+        margin-top: 50px;
     }
 
     th,
@@ -40,7 +61,7 @@ table {
 
 th,
 td {
-     padding: 10px;
+    padding: 10px;
     text-align: left;
     border: 1px solid #dddddd;
 }

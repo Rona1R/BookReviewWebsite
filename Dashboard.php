@@ -13,6 +13,7 @@
       <?php include('Navigation.php')?>
     </header>
     <main class="dashboard">
+      <div class="scrollTable">
       <div class="TableContainer">
         <table border="1">
           <tr>
@@ -138,7 +139,8 @@
             <td><a href="#">Delete</a></td>
           </tr>
         </table>
-      </div>  
+      </div> 
+    </div> 
     </main> 
     <?php include_once('Footer.php')?>
   </body>
