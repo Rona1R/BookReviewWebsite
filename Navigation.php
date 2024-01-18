@@ -18,7 +18,7 @@ include_once("logInFunc/handleUserSession.php");
         </div>
       </div>
       <!-- <?php echo $hide?> -->
-      <a id=<?php echo $hide?>><b>Dashboard</b></a>
+      <a id="<?php echo $hide?>" href="Dashboard.php"><b>Dashboard</b></a>
     </div>
     <div class="NavigationRight">
         <!-- <div class="Bottom">
