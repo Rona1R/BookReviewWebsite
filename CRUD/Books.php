@@ -36,29 +36,23 @@ class Books extends DbConnect{
 
     }
     
-    public function insertReviews(){ // funksioni qe komentet qe i shkrun Useri i inserton ne Databaze ->bashke me ID e user-it qe e ka shkru komentin si dhe ID e librit per te cilin u shkru komenti
-        // name='shtoReview'
+    public function insertReviews(){ // duhet me ndreq kur tbohet submit komenti me tbo redirect ne faqen paraprake ...
+     
         $useri = $_SESSION['username']; # username-i i userit qe e ka lan komentin (merret nga Sessioni)
         # me bo retrieve ID e user-it qe ka lan koment prej databaze:
         $useriID=null;
         $stmt = $this->conn->prepare("SELECT u.UserID FROM Users u WHERE u.Username = ?");
         $stmt->bind_param("s", $useri);
 
-        // Execute the statement    
+           
         $stmt->execute();
 
-        // Bind the result variable
         $stmt->bind_result($useriID);
 
-        // Fetch the result
         $stmt->fetch();
 
-        // Close the statement and connection
         $stmt->close();
-        // $useriID = "select u.UserID
-        // from Users u
-        // where u.Username = $useri 
-        // ";
+       
 
         
         if(isset($_POST['shtoReview'])){
