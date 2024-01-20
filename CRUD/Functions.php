@@ -25,5 +25,6 @@ class Functions extends DbConnect{
         return $allData;
     }
 
+
 }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 08:13 PM
+-- Generation Time: Jan 20, 2024 at 03:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,7 +47,8 @@ INSERT INTO `autori` (`IDAutori`, `Emri`, `Mbiemri`) VALUES
 (7, 'Tahereh', 'Mafi'),
 (8, 'Ashley', 'Poston'),
 (9, 'Nicholas', 'Sparks'),
-(10, 'Evelyn', 'Lozada');
+(10, 'Evelyn', 'Lozada'),
+(11, 'Hannah', 'Orenstein');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,38 @@ INSERT INTO `autorilibri` (`IDAutori`, `IDLibri`) VALUES
 (6, 7),
 (8, 9),
 (9, 10),
-(10, 11);
+(10, 11),
+(11, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `komenti`
+--
+
+CREATE TABLE `komenti` (
+  `KomentiID` int(11) NOT NULL,
+  `UserId` int(11) DEFAULT NULL,
+  `IDLibri` int(11) DEFAULT NULL,
+  `content` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `komenti`
+--
+
+INSERT INTO `komenti` (`KomentiID`, `UserId`, `IDLibri`, `content`) VALUES
+(76, 2, 1, '          b'),
+(77, 2, 3, '          book 3'),
+(78, 2, 8, '   Review for another book       '),
+(79, 16, 1, 'Excellent Book    '),
+(80, 2, 12, 'very interesting book'),
+(81, 20, 12, 'Liber palidhje'),
+(82, 2, 12, '          good book'),
+(83, 2, 12, 'nice book'),
+(84, 20, 11, '5/10.Not very good      '),
+(85, 19, 12, 'favorite book ever!!'),
+(86, 19, 10, 'very interesting plot and story');
 
 -- --------------------------------------------------------
 
@@ -105,7 +137,8 @@ INSERT INTO `librat` (`IDLibri`, `Genre`, `Src`, `BookTitle`) VALUES
 (8, 'Fantasy', 'FOTOT/Four.jpeg', 'Four'),
 (9, 'Romance', 'FOTOT/DeadRomantics.png', 'Dead Romantics'),
 (10, 'Romance', 'FOTOT/TheNotebook.jpg', 'The Notebook'),
-(11, 'Romance', 'FOTOT/ThePerfectDate.jpg', 'The Perfect Date');
+(11, 'Romance', 'FOTOT/ThePerfectDate.jpg', 'The Perfect Date'),
+(12, 'Romance', 'FOTOT/LoveAtFirstLike.jpg', 'Love At First Like');
 
 -- --------------------------------------------------------
 
@@ -157,6 +190,14 @@ ALTER TABLE `autorilibri`
   ADD KEY `IDLibri` (`IDLibri`);
 
 --
+-- Indexes for table `komenti`
+--
+ALTER TABLE `komenti`
+  ADD PRIMARY KEY (`KomentiID`),
+  ADD KEY `UserId` (`UserId`),
+  ADD KEY `IDLibri` (`IDLibri`);
+
+--
 -- Indexes for table `librat`
 --
 ALTER TABLE `librat`
@@ -178,13 +219,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `autori`
 --
 ALTER TABLE `autori`
-  MODIFY `IDAutori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IDAutori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `komenti`
+--
+ALTER TABLE `komenti`
+  MODIFY `KomentiID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `librat`
 --
 ALTER TABLE `librat`
-  MODIFY `IDLibri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IDLibri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -202,6 +249,13 @@ ALTER TABLE `users`
 ALTER TABLE `autorilibri`
   ADD CONSTRAINT `autorilibri_ibfk_1` FOREIGN KEY (`IDAutori`) REFERENCES `autori` (`IDAutori`),
   ADD CONSTRAINT `autorilibri_ibfk_2` FOREIGN KEY (`IDLibri`) REFERENCES `librat` (`IDLibri`);
+
+--
+-- Constraints for table `komenti`
+--
+ALTER TABLE `komenti`
+  ADD CONSTRAINT `komenti_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`),
+  ADD CONSTRAINT `komenti_ibfk_2` FOREIGN KEY (`IDLibri`) REFERENCES `librat` (`IDLibri`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

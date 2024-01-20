@@ -42,7 +42,13 @@
 
       <div class="slider-container">
         <div class="slider-content">
-          <div class="book">
+            <?php 
+              include_once('CRUD/Books.php');
+              $books = new Books();
+              $books->displayBooks('Romance')
+            ?> 
+
+          <!-- <div class="book">
             <img src="FOTOT/DeadRomantics.png" alt="Dead Romantics" />
             <h3>Dead Romantics</h3>
             <p>Author: Ashley Poston</p>
@@ -89,15 +95,14 @@
             <h3>Love At First Like</h3>
             <p>Author: Hannah Orenstein</p>
             <button class="showReview">Click to see reviews</button>
-          </div>
+          </div> 
         </div>
-      </div>
+      </div>-->
 
       <!-- ne KETA CONTAINERS do vendosen reviews per secilin liber specifik-->
 
-      <div class="ReviewDisplay" id="L9Review">
+      <!-- <div class="ReviewDisplay" id="L9Review">
         <p>Dead Romantics</p>
-        <!-- <button onclick="closeReview('L1Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL9">
           <label for="komentiL9">Leave your review:</label>
@@ -105,14 +110,13 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock9"> <!-- ktu kan mu bo append komentet e userit (UserReview)-->
+        <div class="UserReviewContainer" id="UserReviewBlock9"> 
 
         </div>
-      </div>
-
+      </div> -->
+<!-- 
       <div class="ReviewDisplay" id="L10Review">
         <p>The Notebook</p>
-        <!-- <button  onclick="closeReview('L2Review')" >Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL10">
           <label for="komentiLL2">Leave your review:</label>
@@ -120,13 +124,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock10"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer" id="UserReviewBlock10"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L11Review">
         <p>The Perfect Date</p>
-        <!-- <button onclick="closeReview('L3Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL11">
           <label for="komentiL11">Leave your review:</label>
@@ -134,13 +137,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer"  id="UserReviewBlock11"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer"  id="UserReviewBlock11"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L12Review">
         <p>Romeo and Juliet</p>
-        <!-- <button onclick="closeReview('L4Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL12">
           <label for="komentiL12">Leave your review:</label>
@@ -148,13 +150,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock12"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer" id="UserReviewBlock12"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L13Review">
         <p>Me Before You</p>
-        <!-- <button onclick="closeReview('L5Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL13">
           <label for="komentiL13">Leave your review:</label>
@@ -162,13 +163,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock13"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer" id="UserReviewBlock13"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L14Review">
         <p>Song Of Achilles</p>
-        <!-- <button onclick="closeReview('L6Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL14">
           <label for="komentiL14">Leave your review:</label>
@@ -176,13 +176,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock14"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer" id="UserReviewBlock14"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L15Review">
         <p>Happily Ever Afters</p>
-        <!-- <button onclick="closeReview('L7Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL15">
           <label for="komentiL15">Leave your review:</label>
@@ -190,13 +189,12 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock15"> <!-- ktu kan mu bo append komentet e userit-->
+        <div class="UserReviewContainer" id="UserReviewBlock15"> 
 
         </div>
       </div>
       <div class="ReviewDisplay" id="L16Review">
         <p>Love At First Like</p>
-        <!-- <button onclick="closeReview('L8Review')">Close Review</button> -->
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL16">
           <label for="komentiL16">Leave your review:</label>
@@ -204,10 +202,15 @@
           </textarea>
           <button type="submit" name="shtoReview">Post Review</button>
         </form>
-        <div class="UserReviewContainer" id="UserReviewBlock16"> <!-- ktu kan mu bo append komentet e userit-->
-
+        <div class="UserReviewContainer" id="UserReviewBlock16"> 
+-->
         </div>
       </div>
+
+      <?php 
+        $books = new Books();
+        $books->displayReviews('Romance');
+      ?>
     </main>
     <?php include('Footer.php')?>
   </body>

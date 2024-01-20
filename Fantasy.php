@@ -44,31 +44,21 @@
       </div> 
       <div class="slider-container">
         <div class="slider-content">
-
+            
             <?php 
               include_once('CRUD/Books.php');
               $books = new Books();
-              $booksData = $books->getAllBooks(); # te dhenat e librav i run ne array asociativ ,ku qelesat jane emrat e kolonave nga tabela ne databaze
-              
-              foreach($booksData as $book){
-                echo "<div class='book'>";
-                $autori = $books->getAuthor($book['BookTitle']); # kthe autorin e atij libri 
-                if($book['Genre'] == 'Fantasy'){
-                  
-                  echo "<img src={$book['Src']} alt={$book['BookTitle']} />
-                        <h3>{$book['BookTitle']}</h3>
-                        <p>Author: {$autori['Emri']} {$autori['Mbiemri']}</p>
-                        <button class='showReview'>Click to see reviews</button>";
-        
-                }
-                echo "</div>";
-              }
-        
+              $books->displayBooks('Fantasy');
           
-          ?>
+            ?> 
         </div>
       </div> 
 
+
+      <?php 
+        $books = new Books();
+        $books->displayReviews('Fantasy');
+      ?>
 
 
       <!-- <div class="slider-container">
@@ -128,7 +118,7 @@
 
       <!-- ne KETA CONTAINERS do vendosen reviews per secilin liber specifik-->
 
-      <div class="ReviewDisplay" id="L1Review">
+      <!-- <div class="ReviewDisplay" id="L1Review">
         <p>Believe me</p>
         <button class="closeReview">Close Reviews</button>
         <form class="leaveReview" id="reviewL1">
@@ -224,7 +214,7 @@
         </form>
         <div class="UserReviewContainer" id="UserReviewBlock8">
         </div>
-      </div>
+      </div> -->
     </main>
    
     <?php include('Footer.php')?>
