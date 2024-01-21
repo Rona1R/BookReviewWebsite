@@ -217,6 +217,10 @@
       </div> -->
     </main>
    
-    <?php include('Footer.php')?>
+    <?php include('Footer.php');?>
+    <?php 
+    $b1 = new Books();
+    $b1->insertReviews();
+    ?>
   </body>
 </html>

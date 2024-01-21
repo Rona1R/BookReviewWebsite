@@ -212,6 +212,10 @@
         $books->displayReviews('Romance');
       ?>
     </main>
-    <?php include('Footer.php')?>
+    <?php include('Footer.php');?>
+    <?php 
+    $b = new Books();
+    $b->insertReviews();
+    ?>
   </body>
 </html>

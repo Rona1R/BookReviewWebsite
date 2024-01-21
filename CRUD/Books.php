@@ -37,7 +37,7 @@ class Books extends DbConnect{
     }
     
     public function insertReviews(){ // duhet me ndreq kur tbohet submit komenti me tbo redirect ne faqen paraprake ...
-     
+       
         $useri = $_SESSION['username']; # username-i i userit qe e ka lan komentin (merret nga Sessioni)
         # me bo retrieve ID e user-it qe ka lan koment prej databaze:
         $useriID=null;
@@ -60,6 +60,8 @@ class Books extends DbConnect{
             $idBook = $_POST['idBook'];
             $query = "insert into komenti(UserId,IDLibri,content) values($useriID,$idBook,'$commentContent')";
             $this->conn->query($query);
+
+            // echo '<script>location.reload();</script>';
             exit();
         }
         
@@ -100,9 +102,7 @@ class Books extends DbConnect{
         }
     
         echo "</div></div>";
-        $this->insertReviews();
     }
-
     public function displayBooks($byGenre){
         $func = new Functions();
         $booksData = $func->getAllData('librat');
