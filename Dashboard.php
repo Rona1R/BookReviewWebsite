@@ -13,13 +13,12 @@
       <?php include('Navigation.php')?>
     </header>
     <main class="dashboard">
+
       <div class="scrollTable">
       <div class="TableContainer">
         <table border="1">
           <tr>
             <th>ID</th>
-            <th>NAME</th>
-            <th>SURNAME</th>
             <th>EMAIL</th>
             <th>USERNAME</th>
             <th>PASSWORD</th>
@@ -27,10 +26,14 @@
             <th>Delete</th>
           </tr>
 
+          <?php
+         include_once('CRUD/User.php');
+          $user=new User();
+          $user->displayUsers();
+         ?>
+<!-- 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -40,8 +43,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -51,8 +52,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -62,8 +61,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -73,8 +70,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -84,8 +79,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -95,21 +88,17 @@
 
           <tr>
             <td>2</td>
-            <td>Jane</td>
-            <td>Smith</td>
             <td>jane@example.com</td>
             <td>jane_smith</td>
             <td>password456</td>
             <td><a href="#">Edit</a></td>
             <td><a href="#">Delete</a></td>
-          </tr>
+          </tr> -->
         </table>
 
         <table border="1">
           <tr>
             <th>ID</th>
-            <th>NAME</th>
-            <th>SURNAME</th>
             <th>EMAIL</th>
             <th>USERNAME</th>
             <th>PASSWORD</th>
@@ -119,8 +108,6 @@
 
           <tr>
             <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
             <td>john@example.com</td>
             <td>john_doe</td>
             <td>password123</td>
@@ -130,8 +117,6 @@
 
            <tr>
             <td>2</td>
-            <td>Jane</td>
-            <td>Smith</td>
             <td>jane@example.com</td>
             <td>jane_smith</td>
             <td>password456</td>
