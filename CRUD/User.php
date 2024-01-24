@@ -23,8 +23,8 @@
             <td>{$user['Username']}</td>
             <td>{$user['Password']}</td>
             <td><a>Edit</a></td>
-            <td><a>Delete</a></td>
-          </tr>";
+            <td><a href='DashboardActions/Delete.php?id={$user['UserId']}'>Delete</a></td>
+            </tr>";
 
 
         }

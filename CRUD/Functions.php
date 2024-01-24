@@ -25,6 +25,17 @@ class Functions extends DbConnect{
         return $allData;
     }
 
+    public function deleteUser($id,$table){
+        
+        $sql="DELETE FROM $table WHERE UserId=?";
+
+        $statement = $this->conn->prepare($sql);
+
+        $statement->execute([$id]);
+
+        echo "<script>alert('delete was successful'); </script>";
+    }
+    
 
 }
 ?>
