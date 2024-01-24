@@ -156,21 +156,20 @@ class Books extends DbConnect{
 
         $func= new Functions();
         $booksData= $func->getAllData('librat');
+        $bookAuthor = null;
 
         foreach($booksData as $book){
- 
+            $bookAuthor = $this->getAuthor($book['BookTitle']);
             echo "<tr>
             <td>{$book['IDLibri']}</td>
             <td>{$book['Genre']}</td>
             <td>{$book['Src']}</td>
             <td>{$book['BookTitle']}</td>
-            <td></td>
+            <td>{$bookAuthor['Emri']} {$bookAuthor['Mbiemri']}</td>
             <td><a  href='DashboardActions/EditBook.php?id={$book['IDLibri']}'>Edit</a></td>
             <td><a href='DashboardActions/DeleteBook.php?id={$book['IDLibri']}'>Delete</a></td>
             <td>placeholder</td>
             </tr>";
-
-
         }
     }
 

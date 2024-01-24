@@ -7,6 +7,7 @@ $bookId=$_GET['id'];
 
 $bookObj = new Books();
 $bookData = $bookObj->getBookById($bookId);
+$autori = $bookObj->getAuthor($bookData['BookTitle']);
 
 if(isset($_POST['editSubmit'])){
     $Genre = $_POST['Genre']; 
@@ -34,28 +35,34 @@ if(isset($_POST['editSubmit'])){
         <div class="SignIn">
             <div class="SignInTop">
                 <img alt="LOGO" src="../FOTOT/7naIo6-LogoMakr.png">
-                <p>Edit User</p>
+                <p>Edit Book</p>
             </div>
-            <form  id='editUserForm' method="POST">
-                <div class="SignInInfo" id="UsernameBox">
+            <form  id='editBookForm' method="POST">
+                <div class="SignInInfo">
                     <label for="Genre" class="SignInLabel">Genre:</label>
                     <input type="text" id="Genre" name="Genre" value="<?php echo $bookData['Genre']?>">
                 </div>
 
-                <div class="SignInInfo" id="emailBox">
+                <div class="SignInInfo">
                     <label for="src" class="SignInLabel">Src:</label>
                     <input type="text" id="src" name="src" value="<?php echo $bookData['Src']?>">
                 </div>
 
-                <div class="SignInInfo" id="roleBox">
+                <div class="SignInInfo">
                     <label for="bookTitle" class="SignInLabel">BookTitle:</label>
                     <input type="text" id="bookTitle" name="bookTitle" value="<?php echo $bookData['BookTitle']?>">
                 </div>
+                
+                <div class="SignInInfo">
+                    <label for="authorName" class="SignInLabel">Name:</label>
+                    <input type="text" id="authorName" name="authorName"  value="<?php echo $autori['Emri']?>">
+                </div>
 
-                <!-- <div class="SignInInfo">
-                    <label for="passwordEdit" class="SignInLabel">Password:</label>
-                    <input type="text" id="passwordEdit" name="passwordEdit" value="<?php echo $userData['Password']?>">
-                </div> -->
+                <div class="SignInInfo">
+                    <label for="authorLastName" class="SignInLabel">LastName:</label>
+                    <input type="text" id="authorName" name="authorLastName"  value="<?php echo $autori['Mbiemri']?>">
+                </div>
+            
                 <div class="SubmitArea">
                     <button type="submit" name='editSubmit'>Save</button>
                     
@@ -64,6 +71,16 @@ if(isset($_POST['editSubmit'])){
         </div>
     </div>
 </body>
+
+
+
+
+
+
+<style>
+    .SubmitArea{
+        padding-top: 10px;
+    }
+</style>
 </html>
 
-?>
