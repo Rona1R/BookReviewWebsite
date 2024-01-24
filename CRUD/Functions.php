@@ -48,6 +48,28 @@ class Functions extends DbConnect{
         // echo "<script>alert('update was successful'); </script>";
     }
 
+    public function deleteBook($id,$table){
+        
+        $sql="DELETE FROM $table WHERE IDLibri=?";
+
+        $statement = $this->conn->prepare($sql);
+
+        $statement->execute([$id]);
+
+        echo "<script>alert('delete was successful'); </script>";
+    }
+
+    public function editBook($IDLibri,$Genre,$Src,$BookTitle){
+
+        $sql="UPDATE librat SET Genre=?, Src=?,BookTitle=? WHERE IDLibri=?";
+
+        $statement= $this->conn->prepare($sql);
+
+        $statement->execute([$Genre,$Src,$BookTitle,$IDLibri]);
+
+        // echo "<script>alert('update was successful'); </script>";
+    }
+
 
     
 

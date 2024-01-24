@@ -45,7 +45,7 @@ class User extends DbConnect{
 
         return $userData;
     }
-
+    
     public function userExists($user){
         $sql = $this->conn->prepare("SELECT COUNT(*) as count FROM users WHERE users.Username = ?");
         $sql->bind_param("s", $user);

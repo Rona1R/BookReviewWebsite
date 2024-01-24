@@ -136,6 +136,44 @@ class Books extends DbConnect{
         }
     }
 
+    
+    public function getBookById($id){ // (lexon nga Databaza)ti kthen te dhenat e Libri-it me ID Specifike
+               
+        $bookData = null;
+
+        $sql = "SELECT * FROM librat u where u.IDLibri=$id";
+        $query = $this->conn->query($sql);
+        if ($query) {
+            $bookData=  mysqli_fetch_assoc($query);          
+        }
+
+        return $bookData;
+    }
+
+    //me i display books ne dashboard
+
+    public function displayBooksDashboard(){
+
+        $func= new Functions();
+        $booksData= $func->getAllData('librat');
+
+        foreach($booksData as $book){
+ 
+            echo "<tr>
+            <td>{$book['IDLibri']}</td>
+            <td>{$book['Genre']}</td>
+            <td>{$book['Src']}</td>
+            <td>{$book['BookTitle']}</td>
+            <td></td>
+            <td><a  href='DashboardActions/EditBook.php?id={$book['IDLibri']}'>Edit</a></td>
+            <td><a href='DashboardActions/DeleteBook.php?id={$book['IDLibri']}'>Delete</a></td>
+            <td>placeholder</td>
+            </tr>";
+
+
+        }
+    }
+
 
 
 }

@@ -38,15 +38,23 @@
 
         <table border="1">
           <tr>
-            <th>ID</th>
-            <th>EMAIL</th>
-            <th>USERNAME</th>
-            <th>PASSWORD</th>
+            <th>IDLIBRI</th>
+            <th>GENRE</th>
+            <th>SRC</th>
+            <th>BOOKTITLE</th>
+            <th>AUTORI</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Modified by</th>
           </tr>
 
-          <tr>
+          <?php
+         include_once('CRUD/Books.php');
+          $book=new Books();
+          $book->displayBooksDashboard();
+         ?>
+
+          <!-- <tr>
             <td>1</td>
             <td>john@example.com</td>
             <td>john_doe</td>
@@ -62,7 +70,7 @@
             <td>password456</td>
             <td><a href="#">Edit</a></td>
             <td><a href="#">Delete</a></td>
-          </tr>
+          </tr> -->
         </table>
       </div> 
     </div> 
