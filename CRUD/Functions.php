@@ -25,6 +25,7 @@ class Functions extends DbConnect{
         return $allData;
     }
 
+
     public function deleteUser($id,$table){
         
         $sql="DELETE FROM $table WHERE UserId=?";
@@ -35,6 +36,19 @@ class Functions extends DbConnect{
 
         echo "<script>alert('delete was successful'); </script>";
     }
+
+    public function editUser($id,$username,$email,$role,$password){
+
+        $sql="UPDATE users SET username=?, email=? ,role=?,password=? WHERE UserId=?";
+
+        $statement= $this->conn->prepare($sql);
+
+        $statement->execute([$username,$email,$role,$password,$id]);
+
+        // echo "<script>alert('update was successful'); </script>";
+    }
+
+
     
 
 }

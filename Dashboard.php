@@ -22,8 +22,10 @@
             <th>EMAIL</th>
             <th>USERNAME</th>
             <th>PASSWORD</th>
+            <th>ROLE</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Modified by:</th>
           </tr>
 
           <?php
@@ -31,69 +33,7 @@
           $user=new User();
           $user->displayUsers();
          ?>
-<!-- 
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
 
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>jane@example.com</td>
-            <td>jane_smith</td>
-            <td>password456</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr> -->
         </table>
 
         <table border="1">
