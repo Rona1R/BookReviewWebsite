@@ -1,6 +1,12 @@
 <?php
 include_once('../logInFunc/handleUserSession.php');
 include_once('../CRUD/Functions.php');
+include_once('../CRUD/User.php');
+
+$user = new User();
+$userData = $user->getUserIdByUsername($_SESSION['username']);
+$adminId = $userData['userId'];
+
 
 $errorMessage = "";
 if(isset($_POST['createSubmit'])){
@@ -16,7 +22,8 @@ if(isset($_POST['createSubmit'])){
 
     if(empty($errorMessage)){ // nese ska pas error kjo eshte empty dmth continue me insertimin ne db
         $f = new Functions();
-        $f->insertBook($genre,$imgSrc,$BookTitle,$autoriEmri,$autoriMbiemri);
+        $bookId = $f->insertBook($genre,$imgSrc,$BookTitle,$autoriEmri,$autoriMbiemri);
+        $f->insertLogForBook($adminId,"Added",$bookId);
         header('Location:../Dashboard.php');
         exit;
     }

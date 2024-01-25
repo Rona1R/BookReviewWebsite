@@ -98,6 +98,8 @@ class Functions extends DbConnect{
         $statementBookAuthor = $this->conn->prepare($sqlBookAuthor);
         $statementBookAuthor->execute([$insertedAuthorId,$insertedBookId]);
 
+        return $insertedBookId;
+
     }
 
     public function insertLogForUser($IDAdmin,$Ndryshimi,$IDUser){
