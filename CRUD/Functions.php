@@ -123,5 +123,15 @@ class Functions extends DbConnect{
         $statementLog = $this->conn->prepare($sqlLog);
         $statementLog->execute([$IDAdmin,$Ndryshimi,$IDComment,$currentTime]);
     }
+
+    public function deleteComment($id){
+        $sql="DELETE FROM komenti WHERE KomentiID=?";
+
+        $statement = $this->conn->prepare($sql);
+
+        $statement->execute([$id]);
+
+        echo "<script>alert('Deletion was successful'); </script>";
+    }
 }
 ?>

@@ -172,6 +172,26 @@ class Books extends DbConnect{
         }
     }
 
+    public function displayCommentsDashboard(){
+        $func= new Functions();
+        $commentsData= $func->getAllData('komenti');
+        $user = new User();
+
+        foreach($commentsData as $comment){
+            $userData = $user->getUsersById($comment['UserId']);
+            $bookData = $this->getBookById($comment['IDLibri']);
+
+            echo "<tr>
+            <td>{$comment['UserId']}</td>
+            <td>{$userData['Username']}</td>
+            <td>{$userData['Email']}</td>
+            <td>{$bookData['BookTitle']}</td>
+            <td>{$comment['content']}</td>
+            <td><a href='DashboardActions/DeleteComment.php?id={$comment['KomentiID']}'>Delete</a></td>
+            </tr>";
+        }
+    }
+
 
 
 }

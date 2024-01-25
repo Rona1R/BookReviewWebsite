@@ -64,6 +64,24 @@
 
         <table border="1">
           <tr>
+           <th colspan="6" style="text-align:center">Comments</th> 
+          </tr>
+          <tr>
+            <th>IDUser</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Libri</th>
+            <th>Komenti</th>
+            <th>Delete</th>
+          </tr>    
+          <?php 
+          $book = new Books();
+          $book->displayCommentsDashboard();
+          ?>
+        </table>
+
+        <table border="1">
+          <tr>
            <th colspan="6" style="text-align:center">Logs</th> 
           </tr>
           <tr>
