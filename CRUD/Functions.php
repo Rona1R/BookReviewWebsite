@@ -99,5 +99,27 @@ class Functions extends DbConnect{
         $statementBookAuthor->execute([$insertedAuthorId,$insertedBookId]);
 
     }
+
+    public function insertLogForUser($IDAdmin,$Ndryshimi,$IDUser){
+        $sqlLog = "insert into logs (AdminID,Ndryshimi,UserID,Koha) values(?,?,?,?)";
+        $currentTime = date("Y-m-d");
+        $statementLog = $this->conn->prepare($sqlLog);
+        $statementLog->execute([$IDAdmin,$Ndryshimi,$IDUser,$currentTime]);
+     
+    }
+
+    public function insertLogForBook($IDAdmin,$Ndryshimi,$IDBook){
+        $sqlLog = "insert into logs (AdminID,Ndryshimi,IDLibri,Koha) values(?,?,?,?)";
+        $currentTime = date("Y-m-d");
+        $statementLog = $this->conn->prepare($sqlLog);
+        $statementLog->execute([$IDAdmin,$Ndryshimi,$IDBook,$currentTime]);
+    }
+
+    public function insertLogForComment($IDAdmin,$Ndryshimi,$IDComment){
+        $sqlLog = "insert into logs (AdminID,Ndryshimi,KomentiID,Koha) values(?,?,?,?)";
+        $currentTime = date("Y-m-d");
+        $statementLog = $this->conn->prepare($sqlLog);
+        $statementLog->execute([$IDAdmin,$Ndryshimi,$IDComment,$currentTime]);
+    }
 }
 ?>

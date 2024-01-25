@@ -28,6 +28,7 @@ class UserLogIn extends DbConnect{
                 && $emailAddress == $userInDB['Email'] // dmth me i bo check krejt kredencialet a jon sakte para se me bo attempt me fillu session me to
                 ){
                    session_start();
+
                    $_SESSION['username'] = $user;
                    $_SESSION['password'] = $pass;
                    $_SESSION['email'] = $emailAddress;

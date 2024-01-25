@@ -5,7 +5,6 @@
 class User extends DbConnect{
 
     private $conn;
-    private $modifiedBy = 'placeholder';
     public function __construct(){
          $this ->conn =parent::connectDB();
     }
@@ -26,7 +25,6 @@ class User extends DbConnect{
             <td>{$user['Role']}</td>
             <td><a  href='DashboardActions/Edit.php?id={$user['UserId']}'>Edit</a></td>
             <td><a href='DashboardActions/Delete.php?id={$user['UserId']}'>Delete</a></td>
-            <td>{$this->modifiedBy}</td>
             </tr>";
 
 
@@ -37,7 +35,7 @@ class User extends DbConnect{
                
         $userData = null;
 
-        $sql = "SELECT * FROM users u where u.UserId=$id";
+        $sql = "SELECT * FROM users u where u.UserId='$id'";
         $query = $this->conn->query($sql);
         if ($query) {
             $userData=  mysqli_fetch_assoc($query);          
@@ -45,6 +43,19 @@ class User extends DbConnect{
 
         return $userData;
     }
+
+    public function getUserIdByUsername($username){
+        $userId = null;
+
+        $sql = "SELECT u.userId FROM users u where u.username='$username'";
+        $query = $this->conn->query($sql);
+
+        $userId=   mysqli_fetch_assoc($query); 
+
+        return $userId;
+
+    }
+
     
     public function userExists($user){
         $sql = $this->conn->prepare("SELECT COUNT(*) as count FROM users WHERE users.Username = ?");

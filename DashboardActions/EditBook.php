@@ -2,12 +2,18 @@
 include_once('../logInFunc/handleUserSession.php');
 include_once('../CRUD/Functions.php');
 include_once('../CRUD/Books.php');
-
+include_once('../CRUD/User.php');
 $bookId=$_GET['id'];
 
 $bookObj = new Books();
 $bookData = $bookObj->getBookById($bookId);
 $autori = $bookObj->getAuthor($bookData['BookTitle']);
+
+$user = new User();
+$userData = $user->getUserIdByUsername($_SESSION['username']);
+// print_r( $userData);
+$adminId =  $userData['userId'];
+
 // print_r($autori);
 
 // echo $_FILES["photo"]["name"];
@@ -29,6 +35,8 @@ if(isset($_POST['editSubmit'])){
         $f->editBook($bookId,$Genre,$imgSrc,$BookTitle);
     }
     $f->editAuthor($autori['IDAutori'],$autoriEmri,$autoriMbiemri);
+    // $IDAdmin,$Ndryshimi,$IDBook
+    $f->insertLogForBook($adminId,"Modified",$bookId);
     header('Location: ../Dashboard.php');
 }
 

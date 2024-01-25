@@ -18,6 +18,9 @@
       <div class="TableContainer">
         <table border="1">
           <tr>
+           <th colspan="7" style="text-align:center">Users</th> 
+          </tr>
+          <tr>
             <th>ID</th>
             <th>EMAIL</th>
             <th>USERNAME</th>
@@ -25,7 +28,6 @@
             <th>ROLE</th>
             <th>Edit</th>
             <th>Delete</th>
-            <th>Modified by:</th>
           </tr>
 
           <?php
@@ -38,6 +40,9 @@
 
         <table border="1">
           <tr>
+           <th colspan="7" style="text-align:center">Books</th> 
+          </tr>
+          <tr>
             <th>IDLIBRI</th>
             <th>GENRE</th>
             <th>SRC</th>
@@ -45,7 +50,6 @@
             <th>AUTORI</th>
             <th>Edit</th>
             <th>Delete</th>
-            <th>Modified by</th>
           </tr>
 
           <?php
@@ -57,6 +61,26 @@
     
         </table>
         <a class='addBook' href='DashboardActions/createBook.php'>Add Book</a>
+
+        <table border="1">
+          <tr>
+           <th colspan="6" style="text-align:center">Logs</th> 
+          </tr>
+          <tr>
+            <th>IDUser</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Changed</th>
+            <th>Action</th>
+            <th>Date</th>
+          </tr>    
+          
+          <?php
+          include_once('CRUD/Logs.php');
+          $logs=new Logs();
+          $logs->displayLogsDashboard();
+          ?>
+        </table>
       </div> 
     </div> 
     </main> 

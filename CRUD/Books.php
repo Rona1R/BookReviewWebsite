@@ -168,7 +168,6 @@ class Books extends DbConnect{
             <td>{$bookAuthor['Emri']} {$bookAuthor['Mbiemri']}</td>
             <td><a  href='DashboardActions/EditBook.php?id={$book['IDLibri']}'>Edit</a></td>
             <td><a href='DashboardActions/DeleteBook.php?id={$book['IDLibri']}'>Delete</a></td>
-            <td>placeholder</td>
             </tr>";
         }
     }

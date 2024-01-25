@@ -11,13 +11,18 @@ $userObj = new User();
 $userData = $userObj->getUsersById($userId);
 // print_r($userData);
 
+$userData2 = $userObj->getUserIdByUsername($_SESSION['username']);
+$adminId =  $userData2['userId'];
+
+
+
 if(isset($_POST['editSubmit'])){
     $user = $_POST['usernameEdit']; 
     $pass = $_POST['passwordEdit']; 
     $role = $_POST['userRole'];
     $emailAddress = $_POST['emailEdit'];
-
-
+    
+    
     // me bo check nese username dhe passwordi jane modifiku,mos me qene username dhe email i ri i njejt me ndonje ekzistues ne db
     // me kqyr a jane modifiku i krahasojme me ato qe na vine tek UsersData
     if($user != $userData['Username']){ // is modified
@@ -25,16 +30,17 @@ if(isset($_POST['editSubmit'])){
             $errorMessage = "Username is taken";
         }
     }
-
+    
     if($emailAddress != $userData['Email']){ // is modified
         if($userObj->emailExists($emailAddress)){
             $errorMessage = "Email is taken";
         }
     }
-
-
+    
+    
     if(empty($errorMessage)){ // nese error Message eshte empty atehere bej ndryshimet dhe redirect ne Dashboard
         $f = new Functions();
+        $f->insertLogForUser($adminId,"Modified",$userId);
         $f->editUser($userId,$user,$emailAddress,$role,$pass);
         header('Location: ../Dashboard.php');
         exit;
