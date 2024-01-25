@@ -70,6 +70,15 @@ class Functions extends DbConnect{
         // echo "<script>alert('update was successful'); </script>";
     }
 
+    public function editAuthor($id,$emri,$mbiemri){
+        
+        $sql="UPDATE autori SET Emri=?, Mbiemri=? WHERE IDAutori=?";
+
+        $statement= $this->conn->prepare($sql);
+
+        $statement->execute([$emri,$mbiemri,$id]);
+
+    }
 
     
 

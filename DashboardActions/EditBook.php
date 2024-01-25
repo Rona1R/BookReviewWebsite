@@ -8,14 +8,27 @@ $bookId=$_GET['id'];
 $bookObj = new Books();
 $bookData = $bookObj->getBookById($bookId);
 $autori = $bookObj->getAuthor($bookData['BookTitle']);
+// print_r($autori);
+
+// echo $_FILES["photo"]["name"];
 
 if(isset($_POST['editSubmit'])){
     $Genre = $_POST['Genre']; 
-    $Src= $_POST['src']; 
+    $Src = $bookData['Src'];
     $BookTitle = $_POST['bookTitle'];
-
+    $autoriEmri = $_POST['authorName'];
+    $autoriMbiemri = $_POST['authorLastName'];
+    
     $f = new Functions();
-    $f->editBook($bookId,$Genre,$Src,$BookTitle);
+    
+    if(empty($_FILES["photo"]["name"])){ //no file chosen !! mos e ndrysho path (src duhet me mbejt i njejti qysh u kan)
+        $f->editBook($bookId,$Genre,$Src,$BookTitle);
+    }
+    else{
+        $imgSrc="FOTOT/".$_FILES["photo"]["name"]; 
+        $f->editBook($bookId,$Genre,$imgSrc,$BookTitle);
+    }
+    $f->editAuthor($autori['IDAutori'],$autoriEmri,$autoriMbiemri);
     header('Location: ../Dashboard.php');
 }
 
@@ -37,15 +50,15 @@ if(isset($_POST['editSubmit'])){
                 <img alt="LOGO" src="../FOTOT/7naIo6-LogoMakr.png">
                 <p>Edit Book</p>
             </div>
-            <form  id='editBookForm' method="POST">
+            <form  id='editBookForm' method="POST" enctype="multipart/form-data">
                 <div class="SignInInfo">
                     <label for="Genre" class="SignInLabel">Genre:</label>
                     <input type="text" id="Genre" name="Genre" value="<?php echo $bookData['Genre']?>">
                 </div>
 
                 <div class="SignInInfo">
-                    <label for="src" class="SignInLabel">Src:</label>
-                    <input type="text" id="src" name="src" value="<?php echo $bookData['Src']?>">
+                    <label for="photo" class="SignInLabel">Image:</label>
+                    <input type="file" id="photo" name="photo">
                 </div>
 
                 <div class="SignInInfo">
@@ -80,6 +93,16 @@ if(isset($_POST['editSubmit'])){
 <style>
     .SubmitArea{
         padding-top: 10px;
+    }
+    #photo{
+        border: none;
+    }
+    input[type="file"] {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        /* font-size: 16px; */
     }
 </style>
 </html>
