@@ -80,7 +80,24 @@ class Functions extends DbConnect{
 
     }
 
-    
+    // funksioni me i bo insert te dhenat e librit te ri ne databaze:
+    public function insertBook($genre,$src,$title,$AuthorName,$AuthorLastName){
 
+        $sqlBook = "insert into librat (Genre,Src,BookTitle) values(?,?,?)";
+        $statementBook = $this->conn->prepare($sqlBook);
+        $statementBook->execute([$genre,$src,$title]);
+        $insertedBookId = $this->conn->insert_id; # insert_id ->atribut i gatshem per me marr id e librit qe posa eshte shtu
+
+        $sqlAuthor = "insert into autori (Emri,Mbiemri) values(?,?)";
+        $statementAuthor = $this->conn->prepare($sqlAuthor);
+        $statementAuthor->execute([$AuthorName,$AuthorLastName]);
+        $insertedAuthorId = $this->conn->insert_id;
+
+        # me insertu id e atij Libri dhe autorin e tij ne tabelen AutoriLibri
+        $sqlBookAuthor = "insert into autorilibri(IDAutori,IDLibri) values(?,?)";
+        $statementBookAuthor = $this->conn->prepare($sqlBookAuthor);
+        $statementBookAuthor->execute([$insertedAuthorId,$insertedBookId]);
+
+    }
 }
 ?>

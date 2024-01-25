@@ -53,28 +53,29 @@
           $book=new Books();
           $book->displayBooksDashboard();
          ?>
-
-          <!-- <tr>
-            <td>1</td>
-            <td>john@example.com</td>
-            <td>john_doe</td>
-            <td>password123</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr>
-
-           <tr>
-            <td>2</td>
-            <td>jane@example.com</td>
-            <td>jane_smith</td>
-            <td>password456</td>
-            <td><a href="#">Edit</a></td>
-            <td><a href="#">Delete</a></td>
-          </tr> -->
+    
+    
         </table>
+        <a class='addBook' href='DashboardActions/createBook.php'>Add Book</a>
       </div> 
     </div> 
     </main> 
     <?php include_once('Footer.php')?>
   </body>
+
+
+  <style>
+      .addBook{
+        height: fit-content;
+        padding: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 46px;
+        color:white;
+        font-size:15px;
+        font-weight: 600;
+        background-color: #ff99cc;
+      }
+  </style> 
 </html>
