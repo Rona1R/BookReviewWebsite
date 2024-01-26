@@ -36,6 +36,7 @@ if(isset($_POST['editSubmit'])){
     }
     $f->editAuthor($autori['IDAutori'],$autoriEmri,$autoriMbiemri);
     // $IDAdmin,$Ndryshimi,$IDBook
+    $bookObj->insertLastModified($_SESSION['username'],$bookId);
     $f->insertLogForBook($adminId,"Modified",$bookId);
     header('Location: ../Dashboard.php');
 }

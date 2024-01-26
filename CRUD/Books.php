@@ -116,8 +116,8 @@ class Books extends DbConnect{
                  echo "<img src={$book['Src']} alt={$book['BookTitle']} />
                     <h3>{$book['BookTitle']}</h3>
                     <p>Author: {$autori['Emri']} {$autori['Mbiemri']}</p>
-                    <button class='showReview'>Click to see reviews</button>";
-        
+                    <button class='showReview'>Click to see reviews</button>
+                    <p style='font-size:12px'>Last modified by: {$book['ModifiedBy']}</p>";
                  echo "</div>";
 
 
@@ -126,6 +126,13 @@ class Books extends DbConnect{
         }
     }
 
+    public function insertLastModified($username,$bookId){
+        $sql="UPDATE librat SET ModifiedBy=? WHERE IDLibri=?";
+
+        $statement= $this->conn->prepare($sql);
+
+        $statement->execute([$username,$bookId]);
+    }
     public function displayReviews($genre){
         $func = new Functions();
         $booksData = $func->getAllData('librat');

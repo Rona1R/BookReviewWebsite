@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2024 at 10:13 PM
+-- Generation Time: Jan 26, 2024 at 01:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,16 +41,16 @@ INSERT INTO `autori` (`IDAutori`, `Emri`, `Mbiemri`) VALUES
 (1, 'Tahereh', 'Mafi'),
 (2, 'George', 'Martin'),
 (3, 'Suzanne', 'Collins'),
-(4, 'JK', 'Rowlinggg'),
+(4, 'JK', 'Rowling'),
 (5, 'Veronica', 'Roth'),
 (6, 'Sarah', 'J. Maas'),
 (7, 'Tahereh', 'Mafi'),
 (8, 'Ashley', 'Poston'),
 (9, 'Nicholas', 'Sparks'),
 (10, 'Evelyn', 'Lozada'),
-(11, 'Hannah', 'Orenstein'),
+(11, 'Hanah', 'Orenstein'),
 (12, 'Tahereh', 'Mafi'),
-(13, 'Elise', 'Bryant'),
+(13, 'Elisse', 'Bryant'),
 (14, 'Jasmine', 'Guillory'),
 (15, 'W.', 'Shakespeare'),
 (16, 'Jojo', 'Moyes'),
@@ -58,7 +58,13 @@ INSERT INTO `autori` (`IDAutori`, `Emri`, `Mbiemri`) VALUES
 (18, 'Veronica', 'Roth'),
 (19, 'Veronica', 'Roth'),
 (20, 'Veronica', 'Roth'),
-(21, 'Veronica', 'Roth');
+(21, 'Veronica', 'Roth'),
+(22, 'Jojo', 'Moyes'),
+(23, 'Ashley', 'Poston'),
+(24, 'Tahereh', 'Mafi'),
+(25, 'Tahereh', 'Mafi'),
+(26, 'Sarah', 'j.Mass'),
+(27, 'Madelline', 'Miller');
 
 -- --------------------------------------------------------
 
@@ -76,19 +82,21 @@ CREATE TABLE `autorilibri` (
 --
 
 INSERT INTO `autorilibri` (`IDAutori`, `IDLibri`) VALUES
-(1, 1),
 (2, 2),
 (3, 3),
 (4, 4),
 (5, 5),
 (5, 6),
-(6, 7),
-(8, 9),
 (9, 10),
 (10, 11),
 (11, 12),
 (13, 14),
-(14, 15);
+(14, 15),
+(22, 23),
+(23, 24),
+(25, 26),
+(26, 27),
+(27, 28);
 
 -- --------------------------------------------------------
 
@@ -108,35 +116,20 @@ CREATE TABLE `komenti` (
 --
 
 INSERT INTO `komenti` (`KomentiID`, `UserId`, `IDLibri`, `content`) VALUES
-(76, 2, 1, '          b'),
-(77, 2, 3, '          book 3'),
-(79, 16, 1, 'Excellent Book    '),
 (80, 2, 12, 'very interesting book'),
 (82, 2, 12, '          good book'),
 (83, 2, 12, 'nice book'),
 (89, 2, 10, 'definitely a must read'),
-(93, 2, 9, 'The plot was very weak and boring'),
 (94, 2, 11, 'Nice book and story\r\n'),
 (95, 2, 11, 'Favorite book'),
-(96, 2, 9, 'not very interesting to read'),
 (100, 2, 11, 'Nice for some light reading'),
 (105, 2, 2, 'Best book ever.Nothing else can compare'),
-(106, 2, 9, 'I have mixed feelings about this book'),
-(107, 2, 9, 'have read better ones'),
-(113, 2, 2, 'best !!!!!'),
 (114, 2, 2, 'better than i expected'),
-(115, 2, 1, 'test0000'),
 (116, 2, 5, 'test601'),
-(117, 2, 1, 'test602'),
 (121, 2, 3, 'Love everything Suzanne Collins writes'),
 (122, 2, 3, 'super nice book'),
-(123, 2, 4, 'test 1000000'),
-(124, 2, 1, 'test20000000'),
-(125, 2, 1, 'testtttttttttttttttttt'),
 (126, 2, 5, 'testtftztgftzgzg'),
-(127, 2, 1, 'test i fundit'),
-(128, 2, 12, 'test koment'),
-(129, 2, 1, 'ReviewTest');
+(128, 2, 12, 'test koment');
 
 -- --------------------------------------------------------
 
@@ -148,27 +141,30 @@ CREATE TABLE `librat` (
   `IDLibri` int(11) NOT NULL,
   `Genre` varchar(15) DEFAULT NULL,
   `Src` varchar(255) DEFAULT NULL,
-  `BookTitle` varchar(100) DEFAULT NULL
+  `BookTitle` varchar(100) DEFAULT NULL,
+  `ModifiedBy` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `librat`
 --
 
-INSERT INTO `librat` (`IDLibri`, `Genre`, `Src`, `BookTitle`) VALUES
-(1, 'Fantasy', 'FOTOT/BelieveMe.jpg', 'Believe me'),
-(2, 'Fantasy', 'FOTOT/GOT.jpeg', 'Game of thrones'),
-(3, 'Fantasy', 'FOTOT/BalladOfSongbirds.jpeg', 'HungerGames:TBOSAS'),
-(4, 'Fantasy', 'FOTOT/HarryPotter.jpg', 'Harry Potter'),
-(5, 'Fantasy', 'FOTOT/Divergent.jpg', 'Divergent'),
-(6, 'Fantasy', 'FOTOT/Insurgent.jpeg', 'Insurgent'),
-(7, 'Fantasy', 'FOTOT/CourtOfWings.jpeg', 'Court Of Wings and Ruin'),
-(9, 'Romance', 'FOTOT/DeadRomantics.png', 'Dead Romantics'),
-(10, 'Romance', 'FOTOT/TheNotebook.jpg', 'The Notebook'),
-(11, 'Romance', 'FOTOT/ThePerfectDate.jpg', 'The Perfect Date'),
-(12, 'Romance', 'FOTOT/LoveAtFirstLike.jpg', 'Love At First Like'),
-(14, 'Romance', 'FOTOT/HappilyEverAfters.jpg', 'Happily Ever Afters'),
-(15, 'Romance', 'FOTOT/TheProposal.jpg', 'The Proposal');
+INSERT INTO `librat` (`IDLibri`, `Genre`, `Src`, `BookTitle`, `ModifiedBy`) VALUES
+(2, 'Fantasy', 'FOTOT/GOT.jpeg', 'Game of Thrones', 'Rona123'),
+(3, 'Fantasy', 'FOTOT/BalladOfSongbirds.jpeg', 'The Hunger Games', 'Rina123'),
+(4, 'Fantasy', 'FOTOT/HarryPotter.jpg', 'Harry Potter', 'Rina123'),
+(5, 'Fantasy', 'FOTOT/Divergent.jpg', 'Divergent', 'Rona123'),
+(6, 'Fantasy', 'FOTOT/Insurgent.jpeg', 'Insurgent', 'Rona123'),
+(10, 'Romance', 'FOTOT/TheNotebook.jpg', 'The Notebook', 'Rona123'),
+(11, 'Romance', 'FOTOT/ThePerfectDate.jpg', 'The Perfect Date', 'Rona123'),
+(12, 'Romance', 'FOTOT/LoveAtFirstLike.jpg', 'Love At First Like', 'Rona123'),
+(14, 'Romance', 'FOTOT/HappilyEverAfters.jpg', 'Happily Ever Afters', 'Rina123'),
+(15, 'Romance', 'FOTOT/TheProposal.jpg', 'The Proposal', 'Rina123'),
+(23, 'Romance', 'FOTOT/MeBeforeYou.jpg', 'Me Before You', 'Rina123'),
+(24, 'Romance', 'FOTOT/DeadRomantics.png', 'Dead Romantics', 'Rina123'),
+(26, 'Fantasy', 'FOTOT/BelieveMe.jpg', 'Believe Me', 'Rina123'),
+(27, 'Fantasy', 'FOTOT/CourtOfWings.jpeg', 'Court Of Wings and Ruin', 'Rona123'),
+(28, 'Romance', 'FOTOT/SongOfAchilles.jpg', 'Song of Achilles', 'Rina123');
 
 -- --------------------------------------------------------
 
@@ -194,7 +190,36 @@ INSERT INTO `logs` (`LogId`, `AdminID`, `UserID`, `IDLibri`, `KomentiID`, `Ndrys
 (1, 2, NULL, 1, NULL, 'Modified', '2024-01-25'),
 (2, 2, NULL, 22, NULL, 'Deleted', '2024-01-25'),
 (3, 2, 1, NULL, NULL, 'Deleted', '2024-01-25'),
-(4, 2, 17, NULL, NULL, 'Modified', '2024-01-25');
+(4, 2, 17, NULL, NULL, 'Modified', '2024-01-25'),
+(5, 2, NULL, NULL, 115, 'Deleted', '2024-01-26'),
+(6, 2, NULL, NULL, 76, 'Deleted', '2024-01-26'),
+(7, 2, NULL, NULL, 77, 'Deleted', '2024-01-26'),
+(8, 2, NULL, 9, NULL, 'Deleted', '2024-01-26'),
+(9, 3, NULL, NULL, 123, 'Deleted', '2024-01-26'),
+(10, 3, NULL, NULL, 113, 'Deleted', '2024-01-26'),
+(11, 3, NULL, 23, NULL, 'Added', '2024-01-26'),
+(12, 3, NULL, 24, NULL, 'Added', '2024-01-26'),
+(13, 3, NULL, 4, NULL, 'Modified', '2024-01-26'),
+(14, 3, NULL, 4, NULL, 'Modified', '2024-01-26'),
+(15, 3, NULL, 1, NULL, 'Deleted', '2024-01-26'),
+(16, 3, NULL, 25, NULL, 'Added', '2024-01-26'),
+(17, 3, NULL, 25, NULL, 'Deleted', '2024-01-26'),
+(18, 3, NULL, 26, NULL, 'Added', '2024-01-26'),
+(19, 3, NULL, 14, NULL, 'Modified', '2024-01-26'),
+(20, 2, NULL, 2, NULL, 'Modified', '2024-01-26'),
+(21, 2, NULL, 3, NULL, 'Modified', '2024-01-26'),
+(22, 2, NULL, 5, NULL, 'Modified', '2024-01-26'),
+(23, 2, NULL, 6, NULL, 'Modified', '2024-01-26'),
+(24, 2, NULL, 7, NULL, 'Deleted', '2024-01-26'),
+(25, 2, NULL, 27, NULL, 'Added', '2024-01-26'),
+(26, 2, NULL, 10, NULL, 'Modified', '2024-01-26'),
+(27, 2, NULL, 11, NULL, 'Modified', '2024-01-26'),
+(28, 2, NULL, 12, NULL, 'Modified', '2024-01-26'),
+(29, 3, NULL, 15, NULL, 'Modified', '2024-01-26'),
+(30, 3, NULL, 23, NULL, 'Modified', '2024-01-26'),
+(31, 3, NULL, 24, NULL, 'Modified', '2024-01-26'),
+(32, 3, NULL, 28, NULL, 'Added', '2024-01-26'),
+(33, 3, NULL, 3, NULL, 'Modified', '2024-01-26');
 
 -- --------------------------------------------------------
 
@@ -278,7 +303,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `autori`
 --
 ALTER TABLE `autori`
-  MODIFY `IDAutori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `IDAutori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `komenti`
@@ -290,13 +315,13 @@ ALTER TABLE `komenti`
 -- AUTO_INCREMENT for table `librat`
 --
 ALTER TABLE `librat`
-  MODIFY `IDLibri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `IDLibri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `LogId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `LogId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
