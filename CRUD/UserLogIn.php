@@ -2,6 +2,8 @@
 
 include_once('dbConnect.php');
 include_once('Functions.php');
+include_once('User.php');
+
 class UserLogIn extends DbConnect{ 
 
     private $conn; 
@@ -18,7 +20,7 @@ class UserLogIn extends DbConnect{
             $pass=$_POST['password'];
             $emailAddress=$_POST['email'];
             
-            // $usersAll = $this->getAllUsers('users');
+           
             $func = new Functions();
 
             $usersAll = $func->getAllData('users');

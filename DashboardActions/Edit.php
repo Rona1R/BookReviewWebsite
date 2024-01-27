@@ -5,11 +5,10 @@ include_once('../CRUD/Functions.php');
 include_once('../CRUD/User.php');
 $errorMessage ="";
 $userId=$_GET['id'];
-// echo $userId;
 
 $userObj = new User();
 $userData = $userObj->getUsersById($userId);
-// print_r($userData);
+
 
 $userData2 = $userObj->getUserIdByUsername($_SESSION['username']);
 $adminId =  $userData2['userId'];
