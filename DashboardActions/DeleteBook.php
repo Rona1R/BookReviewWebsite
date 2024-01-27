@@ -8,8 +8,8 @@ $function=new Functions();
 $user = new User();
 
 $bookId=$_GET['id'];
-$userData = $user->getUserIdByUsername($_SESSION['username']);
-$adminId =  $userData['userId'];
+$adminId = $user->getUserIdByUsername($_SESSION['username']);
+// $adminId =  $userData['userId'];
 
 $function->insertLogForBook($adminId,"Deleted",$bookId);
 

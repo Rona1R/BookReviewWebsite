@@ -10,8 +10,8 @@ $userObj = new User();
 $userData = $userObj->getUsersById($userId);
 
 
-$userData2 = $userObj->getUserIdByUsername($_SESSION['username']);
-$adminId =  $userData2['userId'];
+$adminId = $userObj->getUserIdByUsername($_SESSION['username']);
+// $adminId =  $userData2['userId'];
 
 
 

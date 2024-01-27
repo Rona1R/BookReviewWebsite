@@ -8,8 +8,8 @@ $user = new User();
 
 $function=new Functions();
 
-$userData = $user->getUserIdByUsername($_SESSION['username']);
-$adminId =  $userData['userId'];
+$adminId= $user->getUserIdByUsername($_SESSION['username']);
+// $adminId =  $userData['userId'];
 
 $function->insertLogForUser($adminId,"Deleted",$userId);
 

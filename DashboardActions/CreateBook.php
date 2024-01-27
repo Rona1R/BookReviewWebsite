@@ -6,8 +6,8 @@ include_once('../CRUD/User.php');
 
 $bookObj = new Books();
 $user = new User();
-$userData = $user->getUserIdByUsername($_SESSION['username']);
-$adminId = $userData['userId'];
+$adminId = $user->getUserIdByUsername($_SESSION['username']);
+// $adminId = $userData['userId'];
 
 
 $errorMessage = "";

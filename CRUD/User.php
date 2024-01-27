@@ -47,11 +47,15 @@ class User extends DbConnect{
     public function getUserIdByUsername($username){
         $userId = null;
 
-        $sql = "SELECT u.userId FROM users u where u.username='$username'";
+        $sql = "SELECT u.userId FROM users u WHERE u.username='$username'";
         $query = $this->conn->query($sql);
-
-        $userId=   mysqli_fetch_assoc($query); 
-
+    
+        $result = mysqli_fetch_assoc($query);
+    
+        if ($result) {
+            $userId = $result['userId'];
+        }
+    
         return $userId;
 
     }

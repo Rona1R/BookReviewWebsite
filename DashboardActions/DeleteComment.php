@@ -8,8 +8,8 @@ $function=new Functions();
 $user = new User();
 
 $commentId=$_GET['id'];
-$userData = $user->getUserIdByUsername($_SESSION['username']);
-$adminId =  $userData['userId'];
+$adminId = $user->getUserIdByUsername($_SESSION['username']);
+// $adminId =  $userData['userId'];
 
 $function->insertLogForComment($adminId,"Deleted",$commentId);
 

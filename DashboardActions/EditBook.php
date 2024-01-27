@@ -10,9 +10,9 @@ $bookData = $bookObj->getBookById($bookId);
 $autori = $bookObj->getAuthor($bookData['BookTitle']);
 
 $user = new User();
-$userData = $user->getUserIdByUsername($_SESSION['username']);
+$adminId = $user->getUserIdByUsername($_SESSION['username']);
 // print_r( $userData);
-$adminId =  $userData['userId'];
+// $adminId =  $userData['userId'];
 
 // print_r($autori);
 
