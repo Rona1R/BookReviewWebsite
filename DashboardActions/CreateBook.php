@@ -22,6 +22,12 @@ if(isset($_POST['createSubmit'])){
         $errorMessage = "All fields are required!";
     }
 
+    if($genre == 'Romance' || $genre == 'Fantasy'){
+        $errorMessage = "";
+    }
+    else{
+        $errorMessage = "Genre name is not valid";
+    }
     if(empty($errorMessage)){ // nese ska pas error kjo eshte empty dmth continue me insertimin ne db
         $f = new Functions();
         $bookId = $f->insertBook($genre,$imgSrc,$BookTitle,$autoriEmri,$autoriMbiemri);

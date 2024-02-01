@@ -4,6 +4,7 @@ include_once('../CRUD/Functions.php');
 include_once('../CRUD/Books.php');
 include_once('../CRUD/User.php');
 $bookId=$_GET['id'];
+$errorMessage = "";
 
 $bookObj = new Books();
 $bookData = $bookObj->getBookById($bookId);
@@ -27,18 +28,36 @@ if(isset($_POST['editSubmit'])){
     
     $f = new Functions();
     
+    if($Genre == 'Romance' || $Genre == 'Fantasy'){
+        $errorMessage = "";
+    }
+    else{
+        $errorMessage = "Genre name not valid";
+    }
+
+    if(empty($Genre) || empty($BookTitle) || empty($autoriEmri) || empty($autoriMbiemri)){
+        $errorMessage = "All Fields are required";
+    }
+
     if(empty($_FILES["photo"]["name"])){ //no file chosen !! mos e ndrysho path (src duhet me mbejt i njejti qysh u kan)
-        $f->editBook($bookId,$Genre,$Src,$BookTitle);
+        if(empty($errorMessage)){
+            $f->editBook($bookId,$Genre,$Src,$BookTitle);
+        }
     }
     else{
         $imgSrc="FOTOT/".$_FILES["photo"]["name"]; 
-        $f->editBook($bookId,$Genre,$imgSrc,$BookTitle);
+        if(empty($errorMessage)){
+            $f->editBook($bookId,$Genre,$imgSrc,$BookTitle);
+        }
     }
-    $f->editAuthor($autori['IDAutori'],$autoriEmri,$autoriMbiemri);
-    // $IDAdmin,$Ndryshimi,$IDBook
-    $bookObj->insertLastModified($_SESSION['username'],$bookId);
-    $f->insertLogForBook($adminId,"Modified",$bookId);
-    header('Location: ../Dashboard.php');
+
+    if( empty($errorMessage)){
+        $f->editAuthor($autori['IDAutori'],$autoriEmri,$autoriMbiemri);
+        // $IDAdmin,$Ndryshimi,$IDBook
+        $bookObj->insertLastModified($_SESSION['username'],$bookId);
+        $f->insertLogForBook($adminId,"Modified",$bookId);
+        header('Location: ../Dashboard.php');
+    }
 }
 
 
@@ -87,7 +106,7 @@ if(isset($_POST['editSubmit'])){
             
                 <div class="SubmitArea">
                     <button type="submit" name='editSubmit'>Save</button>
-                    
+                    <p style='color:red'><?php echo $errorMessage?></p>
                 </div>
             </form>
         </div>

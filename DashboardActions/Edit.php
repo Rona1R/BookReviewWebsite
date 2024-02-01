@@ -21,6 +21,9 @@ if(isset($_POST['editSubmit'])){
     $role = $_POST['userRole'];
     $emailAddress = $_POST['emailEdit'];
     
+    if(empty($user) || empty($pass) || empty($role) || empty($emailAddress)){
+        $errorMessage = "All fields are required";
+    }
     
     // me bo check nese username dhe passwordi jane modifiku,mos me qene username dhe email i ri i njejt me ndonje ekzistues ne db
     // me kqyr a jane modifiku i krahasojme me ato qe na vine tek UsersData
