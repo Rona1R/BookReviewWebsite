@@ -5,7 +5,7 @@ include_once('Functions.php');
 #include_once('handleUserSession.php');
 class Books extends DbConnect{
     private $conn;
-
+   
     public function __construct(){
         $this ->conn = parent::connectDB(); 
     }
@@ -52,25 +52,41 @@ class Books extends DbConnect{
         $stmt->fetch();
 
         $stmt->close();
-       
-
+        
         
         if(isset($_POST['shtoReview'])){
             $commentContent = $_POST['komenti'];
             $idBook = $_POST['idBook'];
-            $query = "insert into komenti(UserId,IDLibri,content) values($useriID,$idBook,'$commentContent')";
-            $this->conn->query($query);
 
-            // echo '<script>location.reload();</script>';
-            exit();
+      
+            if(!empty(trim($commentContent))){
+                $query = $this->conn->prepare("INSERT INTO komenti(UserId, IDLibri, content) VALUES (?, ?, ?)");
+                $query->bind_param("iis", $useriID, $idBook, $commentContent); // iis - > integer integer string
+                $query->execute();
+            
+                // exit();
+            }
+
         }
+        
+
+        
+        // if(isset($_POST['shtoReview'])){
+        //     $commentContent = $_POST['komenti'];
+        //     $idBook = $_POST['idBook'];
+        //     $query = "insert into komenti(UserId,IDLibri,content) values($useriID,$idBook,'$commentContent')";
+        //     $this->conn->query($query);
+
+        //     // echo '<script>location.reload();</script>';
+        //     exit();
+        // }
         
     
     }
     public function retrieveComment($idBook){ // funksioni me marr nga databaza( read) komentin dhe me bo display ne frontend
         $komentiContent = array();
         $comment = null;
-        $stmt = $this->conn->prepare("SELECT k.content FROM komenti k WHERE k.IDLibri = ?");
+        $stmt = $this->conn->prepare("SELECT k.content FROM komenti k WHERE k.IDLibri = ? order by k.KomentiID DESC");
         $stmt->bind_param("s", $idBook);
         $stmt->execute();
         $stmt->bind_result($comment);
@@ -95,6 +111,7 @@ class Books extends DbConnect{
                 <button type='submit' name='shtoReview'>Post Review</button>
             </form>
             <div class='UserReviewContainer' id='UserReviewBlock$idBook'>";
+           
     
         // Loop through each comment and concatenate them inside the HTML
         foreach ($allReviews as $r) {
