@@ -18,16 +18,16 @@ if(isset($_POST['createSubmit'])){
     $autoriMbiemri = $_POST['authorLastName'];
     $imgSrc="FOTOT/".$_FILES["photo"]["name"]; 
 
-    if(empty($genre) || empty($BookTitle) || empty($autoriEmri) || empty($autoriMbiemri) || empty($_FILES["photo"]["name"])){
-        $errorMessage = "All fields are required!";
-    }
-
     if($genre == 'Romance' || $genre == 'Fantasy'){
         $errorMessage = "";
     }
     else{
         $errorMessage = "Genre name is not valid";
     }
+    if(empty($genre) || empty($BookTitle) || empty($autoriEmri) || empty($autoriMbiemri) || empty($_FILES["photo"]["name"])){
+        $errorMessage = "All fields are required!";
+    }
+
     if(empty($errorMessage)){ // nese ska pas error kjo eshte empty dmth continue me insertimin ne db
         $f = new Functions();
         $bookId = $f->insertBook($genre,$imgSrc,$BookTitle,$autoriEmri,$autoriMbiemri);
