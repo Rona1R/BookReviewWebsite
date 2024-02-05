@@ -27,7 +27,7 @@ class UserLogIn extends DbConnect{
             if ($userObj->userExists($user) && $userObj->emailExists($emailAddress)){ // kredencialet valide a jane
                 $userID = $userObj->getUserIdByUsername($user);
                 $userDetails = $userObj->getUsersById($userID);
-                if($pass == $userDetails['Password']){ // nese Useri ekziston bone check a ka shkru password-in mire
+                if($pass == $userDetails['Password'] && $user == $userDetails['Username'] && $emailAddress== $userDetails['Email']){ // nese Useri ekziston bone check a ka shkru password-in mire
                     session_start();
 
                     $_SESSION['username'] = $user;
