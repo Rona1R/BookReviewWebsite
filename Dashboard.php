@@ -10,7 +10,15 @@
 
   <body class="dashboardBody">
     <header>
-      <?php include('Navigation.php')?>
+      <?php include('Navigation.php');
+          if(isset($_SESSION['username']) && $_SESSION['logged_in'] == true) {
+            if ($_SESSION['role'] != 'admin')
+            {
+              header('Location : BookReviewHomePage.php');
+            }      
+          }
+      ?>
+
     </header>
     <main class="dashboard">
 
